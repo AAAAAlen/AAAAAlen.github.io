@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Nick&#39;s Bolg">
 <meta property="og:description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T06:55:51.546Z">
+<meta property="og:updated_time" content="2018-08-05T06:58:32.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01背包">
 <meta name="twitter:description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
@@ -385,7 +385,7 @@
                 
               
 
-              <time title="创建时间：2018-08-05 14:08:40 / 修改时间：14:55:51" itemprop="dateCreated datePublished" datetime="2018-08-05T14:08:40+08:00">2018-08-05</time>
+              <time title="创建时间：2018-08-05 14:08:40 / 修改时间：14:58:32" itemprop="dateCreated datePublished" datetime="2018-08-05T14:08:40+08:00">2018-08-05</time>
             
 
             
@@ -437,11 +437,11 @@
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><blockquote>
 <ul>
 <li>每个物体只有拿和不拿两种情况，则在选择是否拿第i件时，在之前已确定部分的基础上进行比较判断即可</li>
-<li>申请一个二维数组dp[][]，用dp[i][j]来表示在物品数量为i，总重量为j的条件下能达到的最大价值，那么dp[i][j]的值为：<script type="math/tex">dp[i][j]=Max
+<li>申请一个二维数组dp[][]，用dp[i][j]来表示在物品数量为i，总重量为j的条件下能达到的最大价值，那么dp[i][j]的值为：<script type="math/tex; mode=display">dp[i][j]=Max
 \begin{cases}
 dp[i-1][j] &\mbox{不拿第i个，状态跟i-1一样}\\
 dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上第i个的价值v[i]}
-\end{cases}</script><br>最后dp[n][V]即为答案</li>
+\end{cases}</script>最后dp[n][V]即为答案</li>
 </ul>
 </blockquote>
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	    <span class="keyword">for</span>(<span class="keyword">int</span> j=V;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">		&#123;</span><br><span class="line">	        <span class="keyword">if</span>(a[i]&lt;=j)f[i][j]=max(f[i<span class="number">-1</span>][j],f[i<span class="number">-1</span>][j-w[i]]+v[i]);			</span><br><span class="line">	        <span class="keyword">else</span> f[i][j]=f[i<span class="number">-1</span>][j];</span><br><span class="line">			<span class="comment">//f[i-1][j]没拿时的价值,f[i-1][j-a[i]]+b[i]拿了之后的价值 </span></span><br><span class="line">			<span class="comment">//i为前i个物体，j为剩余背包空间 </span></span><br><span class="line">	    &#125;</span><br></pre></td></tr></table></figure>
