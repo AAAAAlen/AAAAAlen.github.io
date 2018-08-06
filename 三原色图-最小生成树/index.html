@@ -115,25 +115,25 @@
 
 
 
-  <meta name="description" content="传送门：HDU 1556描述： N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &amp;lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？">
-<meta name="keywords" content="差分">
+  <meta name="description" content="传送门 HDU6349描述 度度熊有一张 n 个点 m 条边的无向图，所有点按照 1,2,⋯,n 标号，每条边有一个正整数权值以及一种色光三原色红、绿、蓝之一的颜色。现在度度熊想选出恰好 k 条边，满足只用这 k 条边之中的红色边和绿色边就能使 n 个点之间两两连通，或者只用这 k 条边之中的蓝色边和绿色边就能使 n 个点之间两两连通，这里两个点连通是指从一个点出发沿着边可以走到另一个点。对于每个">
+<meta name="keywords" content="最小生成树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Color the ball(差分入门)">
-<meta property="og:url" content="https://aaaaalen.github.io/Color-the-ball-差分入门/index.html">
+<meta property="og:title" content="三原色图(最小生成树)">
+<meta property="og:url" content="https://aaaaalen.github.io/三原色图-最小生成树/index.html">
 <meta property="og:site_name" content="Nick&#39;s Bolg">
-<meta property="og:description" content="传送门：HDU 1556描述： N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &amp;lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？">
+<meta property="og:description" content="传送门 HDU6349描述 度度熊有一张 n 个点 m 条边的无向图，所有点按照 1,2,⋯,n 标号，每条边有一个正整数权值以及一种色光三原色红、绿、蓝之一的颜色。现在度度熊想选出恰好 k 条边，满足只用这 k 条边之中的红色边和绿色边就能使 n 个点之间两两连通，或者只用这 k 条边之中的蓝色边和绿色边就能使 n 个点之间两两连通，这里两个点连通是指从一个点出发沿着边可以走到另一个点。对于每个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-02T03:47:24.741Z">
+<meta property="og:updated_time" content="2018-08-06T12:19:10.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Color the ball(差分入门)">
-<meta name="twitter:description" content="传送门：HDU 1556描述： N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &amp;lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？">
+<meta name="twitter:title" content="三原色图(最小生成树)">
+<meta name="twitter:description" content="传送门 HDU6349描述 度度熊有一张 n 个点 m 条边的无向图，所有点按照 1,2,⋯,n 标号，每条边有一个正整数权值以及一种色光三原色红、绿、蓝之一的颜色。现在度度熊想选出恰好 k 条边，满足只用这 k 条边之中的红色边和绿色边就能使 n 个点之间两两连通，或者只用这 k 条边之中的蓝色边和绿色边就能使 n 个点之间两两连通，这里两个点连通是指从一个点出发沿着边可以走到另一个点。对于每个">
 
 
 
 
 
 
-  <link rel="canonical" href="https://aaaaalen.github.io/Color-the-ball-差分入门/"/>
+  <link rel="canonical" href="https://aaaaalen.github.io/三原色图-最小生成树/"/>
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>Color the ball(差分入门) | Nick's Bolg</title>
+  <title>三原色图(最小生成树) | Nick's Bolg</title>
   
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/Color-the-ball-差分入门/">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/三原色图-最小生成树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nick">
@@ -360,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Color the ball(差分入门)
+          <h1 class="post-title" itemprop="name headline">三原色图(最小生成树)
               
             
           </h1>
@@ -385,24 +385,12 @@
                 
               
 
-              <time title="创建时间：2018-08-01 21:36:08" itemprop="dateCreated datePublished" datetime="2018-08-01T21:36:08+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-06 19:50:17 / 修改时间：20:19:10" itemprop="dateCreated datePublished" datetime="2018-08-06T19:50:17+08:00">2018-08-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-02 11:47:24" itemprop="dateModified" datetime="2018-08-02T11:47:24+08:00">2018-08-02</time>
               
             
           </span>
@@ -443,26 +431,32 @@
       
 
       
-        <h1 id="传送门：HDU-1556"><a href="#传送门：HDU-1556" class="headerlink" title="传送门：HDU 1556"></a>传送门：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1556" target="_blank" rel="noopener">HDU 1556</a></h1><h1 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h1><blockquote>
-<p>N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？<br><a id="more"></a></p>
+        <h1 id="传送门-HDU6349"><a href="#传送门-HDU6349" class="headerlink" title="传送门 HDU6349"></a>传送门 <a href="http://acm.hdu.edu.cn/showproblem.php?pid=6349" target="_blank" rel="noopener">HDU6349</a></h1><h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><blockquote>
+<p>度度熊有一张 n 个点 m 条边的无向图，所有点按照 1,2,⋯,n 标号，每条边有一个正整数权值以及一种色光三原色红、绿、蓝之一的颜色。<br>现在度度熊想选出恰好 k 条边，满足只用这 k 条边之中的红色边和绿色边就能使 n 个点之间两两连通，或者只用这 k 条边之中的蓝色边和绿色边就能使 n 个点之间两两连通，这里两个点连通是指从一个点出发沿着边可以走到另一个点。<br>对于每个 k=1,2,⋯,m，你都需要帮度度熊计算选出恰好 k 条满足条件的边的权值之和的最小值。</p>
 </blockquote>
-<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><blockquote>
-<p>每个测试实例第一行为一个整数N,(N &lt;= 100000).接下来的N行，每行包括2个整数a b(1 &lt;= a &lt;= b &lt;= N)。<br>当N = 0，输入结束。</p>
+<a id="more"></a>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
+<p>第一行包含一个正整数 T，表示有 T 组测试数据。<br>接下来依次描述 T 组测试数据。对于每组测试数据：<br>第一行包含两个整数 n 和 m，表示图的点数和边数。<br>接下来 m 行，每行包含三个整数 a,b,w 和一个字符 c，表示有一条连接点 a 与点 b 的权值为 w、颜色为 c 的无向边。<br>保证 1≤T≤100，1≤n,m≤100，1≤a,b≤n，1≤w≤1000，c∈{R,G,B}，这里 R,G,B 分别表示红色、绿色和蓝色。</p>
 </blockquote>
-<h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><blockquote>
-<p>每个测试实例输出一行，包括N个整数，第I个数代表第I个气球总共被涂色的次数。</p>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
+<p>对于每组测试数据，先输出一行信息 “Case #x:”（不含引号），其中 x 表示这是第 x 组测试数据，接下来 m 行，每行包含一个整数，第 i 行的整数表示选出恰好 i 条满足条件的边的权值之和的最小值，如果不存在合法方案，输出 −1，行末不要有多余空格。</p>
 </blockquote>
-<h1 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h1><blockquote>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
 <ul>
-<li>输入<br>3<br>1 1<br>2 2<br>3 3<br>3<br>1 1<br>1 2<br>1 3<br>0</li>
-<li>输出<br>1 1 1<br>3 2 1</li>
-<li>分析<br>区间修改  每次+1</li>
+<li><p>input<br>1<br>5 8<br>1 5 1 R<br>2 1 2 R<br>5 4 5 R<br>4 5 3 G<br>1 3 3 G<br>4 3 5 G<br>5 4 1 B<br>1 2 2 B</p>
+</li>
+<li><p>output<br>Case #1:<br>-1<br>-1<br>-1<br>9<br>10<br>12<br>17<br>22</p>
+</li>
 </ul>
 </blockquote>
-<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><blockquote>
-<p>暴力修改是会超时间复杂度的，一般是用线段树或者树状数组来做，这里介绍一下差分数组：<br>对于数组a[i]，我们令d[i]=a[i]-a[i-1] (d[1]=a[1])，则d[i]为一个差分数组，我们发现统计d数组的前缀和sum数组，则有：<br>sum[i]=d[1]+d[2]+d[3]+…+d[i]=a[1]+a[2]-a[1]+a[3]-a[2]+…+a[i]-a[i-1]=a[i],即前缀和sum[i]=a[i]；<br>因此每次在区间[l,r]增减x只需要令d[l]+x,d[r+1]-x，就可以保证[l,r]增加了x，而对[1,l-1]和[r+1,n]无影响。复杂度则是O(n)的</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
+<p>按两种选取颜色的方法建立两个最小生成树，然后每次分别加上剩下的边中最小的那一条，用两个数组分别保存采用两种方法得出的答案，最后比较两个数组中每个元素的大小，输出小的值</p>
 </blockquote>
-<h1 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 0xfffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN -0xfffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a) memset(a,0,sizeof(a))</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Pi = <span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E = <span class="built_in">exp</span>(<span class="number">1.0</span>); </span><br><span class="line"><span class="keyword">const</span> LL mod =<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a,b;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)</span><br><span class="line">    &#123;</span><br><span class="line">        INIT(N);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">            N[a]++;</span><br><span class="line">            N[b+<span class="number">1</span>]--;			</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            N[i]+=N[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;N[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;N[n]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;	</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(int i=a;i&lt;b;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,b,a) for(int i=b-1;i&gt;=a;i--)</span></span><br><span class="line"><span class="comment">//b——0,-1,128,0x3f,127 ,字符</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Pi = <span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E = <span class="built_in">exp</span>(<span class="number">1.0</span>);</span><br><span class="line"><span class="keyword">const</span> LL mod =<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MIN=<span class="number">-0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> Flag1[<span class="number">105</span>],Flag2[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> road1[<span class="number">105</span>],road2[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cun</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;<span class="keyword">int</span> b;<span class="keyword">int</span> dis;<span class="keyword">char</span> color;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (cun e) <span class="keyword">const</span>&#123;<span class="keyword">return</span> dis&lt;e.dis;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="built_in">scanf</span>(<span class="string">"%d %d %d %c"</span>,&amp;a,&amp;b,&amp;dis,&amp;color);&#125;</span><br><span class="line">&#125;bian[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">105</span>;i++)f[i]=i;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;<span class="keyword">if</span>(f[n]==n)<span class="keyword">return</span> n;<span class="keyword">else</span> <span class="keyword">return</span> f[n]=find(f[n]); &#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">heb</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">int</span> fa=find(a),fb=find(b);<span class="keyword">if</span>(fa!=fb)&#123;f[fa]=fb;<span class="keyword">return</span> <span class="literal">true</span>;&#125;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildtree1</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">int</span> flag=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(bian[i].color ==<span class="string">'B'</span>)<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span>(heb(bian[i].a ,bian[i].b ))</span><br><span class="line">		&#123;</span><br><span class="line">			sum+=bian[i].dis;</span><br><span class="line">			Flag1[i]=<span class="number">1</span>;</span><br><span class="line">			flag++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag==n<span class="number">-1</span>)<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag&lt;n<span class="number">-1</span>)INIT(road1,<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> p=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i&lt;flag<span class="number">-1</span>)road1[i]=<span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==flag<span class="number">-1</span>)road1[i]=sum;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">while</span>(Flag1[p]==<span class="number">1</span>)p++;</span><br><span class="line">				road1[i]=road1[i<span class="number">-1</span>]+bian[p].dis ;</span><br><span class="line">				Flag1[p]=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildtree2</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">int</span> flag=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(bian[i].color ==<span class="string">'R'</span>)<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span>(heb(bian[i].a ,bian[i].b ))</span><br><span class="line">		&#123;</span><br><span class="line">			sum+=bian[i].dis ;</span><br><span class="line">			Flag2[i]=<span class="number">1</span>;</span><br><span class="line">			flag++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag==n<span class="number">-1</span>)<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag&lt;n<span class="number">-1</span>)INIT(road2,<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> p=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i&lt;flag<span class="number">-1</span>)road2[i]=<span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==flag<span class="number">-1</span>)road2[i]=sum;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">while</span>(Flag2[p]==<span class="number">1</span>)p++;</span><br><span class="line">				road2[i]=road2[i<span class="number">-1</span>]+bian[p].dis ;</span><br><span class="line">				Flag2[p]=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T,n,m;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> q=<span class="number">1</span>;q&lt;=T;q++)</span><br><span class="line">	&#123;</span><br><span class="line">		INIT(Flag1,<span class="number">0</span>);INIT(Flag2,<span class="number">0</span>);</span><br><span class="line">		INIT(road1,<span class="number">0</span>);INIT(road2,<span class="number">0</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)bian[i].read();</span><br><span class="line">			</span><br><span class="line">		sort(bian,bian+m);		</span><br><span class="line">		buildtree1(n,m);</span><br><span class="line">		buildtree2(n,m);</span><br><span class="line">	</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Case #%d:\n"</span>,q);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(road1[i]==road2[i]&amp;&amp;road1[i]==<span class="number">-1</span>)<span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(road1[i]==<span class="number">-1</span>)<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,road2[i]);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(road2[i]==<span class="number">-1</span>)<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,road1[i]);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,min(road1[i],road2[i]));</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="附加彩蛋"><a href="#附加彩蛋" class="headerlink" title="附加彩蛋"></a>附加彩蛋</h1><blockquote>
+<p>这是百度之星资格赛中的一道题，虽然很简单，但是因为一个不起眼的越界问题，导致其他的变量被无意中修改而wa了无数发，真是菜。。。<br>当然，这一次也是很赚的，那就是我在看其他大佬的代码时发现了一些骚气的写法<br>比如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cun</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;<span class="keyword">int</span> b;<span class="keyword">int</span> dis;<span class="keyword">char</span> color;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (cun e)&#123;<span class="keyword">return</span> dis&lt;e.dis;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="built_in">scanf</span>(<span class="string">"%d %d %d %c"</span>,&amp;a,&amp;b,&amp;dis,&amp;color);&#125;</span><br><span class="line">&#125;bian[<span class="number">1005</span>];</span><br><span class="line">sort(bian,bian+m);		</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)bian[i].read();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>也就是结构体中的运算符重载（再写cmp我是狗/kb）和函数用法，以及通过结构体的构造函数赋值的方法<br>不得不说，这一波之后，虽然我没有变强，但是…我变骚了许多hhhhhhh</p>
 
       
     </div>
@@ -513,7 +507,7 @@
     <strong>本文作者： </strong>Nick</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aaaaalen.github.io/Color-the-ball-差分入门/" title="Color the ball(差分入门)">https://aaaaalen.github.io/Color-the-ball-差分入门/</a>
+    <a href="https://aaaaalen.github.io/三原色图-最小生成树/" title="三原色图(最小生成树)">https://aaaaalen.github.io/三原色图-最小生成树/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -526,7 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/差分/" rel="tag"># 差分</a>
+            <a href="/tags/最小生成树/" rel="tag"># 最小生成树</a>
           
         </div>
       
@@ -539,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/哈特13的字符串-差分/" rel="next" title="哈特13的字符串(差分)">
-                <i class="fa fa-chevron-left"></i> 哈特13的字符串(差分)
+              <a href="/多重背包/" rel="next" title="多重背包">
+                <i class="fa fa-chevron-left"></i> 多重背包
               </a>
             
           </div>
@@ -548,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/01背包/" rel="prev" title="01背包">
-                01背包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -729,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传送门：HDU-1556"><span class="nav-number">1.</span> <span class="nav-text">传送门：HDU 1556</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述："><span class="nav-number">2.</span> <span class="nav-text">描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">3.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">4.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例："><span class="nav-number">5.</span> <span class="nav-text">样例：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路："><span class="nav-number">6.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code："><span class="nav-number">7.</span> <span class="nav-text">Code：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传送门-HDU6349"><span class="nav-number">1.</span> <span class="nav-text">传送门 HDU6349</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述"><span class="nav-number">2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入"><span class="nav-number">3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出"><span class="nav-number">4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例"><span class="nav-number">5.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">6.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附加彩蛋"><span class="nav-number">8.</span> <span class="nav-text">附加彩蛋</span></a></li></ol></div>
             
 
           </div>
