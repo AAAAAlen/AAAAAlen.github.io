@@ -124,7 +124,7 @@
 <meta property="og:description" content="题目描述 Given an N*N matrix A, whose elements are either 0 or 1. A[i, j] means the number in the i-th row and j-th column. Initially we have A[i, j] = 0 (1 &amp;lt;= i, j &amp;lt;= N).We can change the matrix in">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz35ygabdj30ox0g8wep.jpg">
-<meta property="og:updated_time" content="2018-09-05T15:48:42.296Z">
+<meta property="og:updated_time" content="2018-09-05T15:53:19.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matrix (二维树状数组)">
 <meta name="twitter:description" content="题目描述 Given an N*N matrix A, whose elements are either 0 or 1. A[i, j] means the number in the i-th row and j-th column. Initially we have A[i, j] = 0 (1 &amp;lt;= i, j &amp;lt;= N).We can change the matrix in">
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2018-09-05 23:18:05 / 修改时间：23:48:42" itemprop="dateCreated datePublished" datetime="2018-09-05T23:18:05+08:00">2018-09-05</time>
+              <time title="创建时间：2018-09-05 23:18:05 / 修改时间：23:53:19" itemprop="dateCreated datePublished" datetime="2018-09-05T23:18:05+08:00">2018-09-05</time>
             
 
             
@@ -473,8 +473,7 @@
 </blockquote>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
 <ul>
-<li>题意：C——以(x1,y1)为左上角，(x2,y2)为右上角的矩阵，每个元素01取反<pre><code>  Q——询问(x,y)的值
-</code></pre></li>
+<li>题意：<br>C——以(x1,y1)为左上角，(x2,y2)为右上角的矩阵，每个元素01取反<br>Q——询问(x,y)的值</li>
 <li>结合矩阵翻转，将区间修改单点查询转变成单点修改区间求和。</li>
 <li>用二维树状数组保存点的修改次数，修改的时候进行如下操作：<br><img src="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz35ygabdj30ox0g8wep.jpg" alt=""><br>黄色部分为本次需要修改的区间，我们对四个绿色点进行add操作，也就是将每个绿色点右下角部分的矩阵进行翻转，这样我们进行四次单点修改就完成了整个区间的修改。而要查询某个点的值时，求出它的翻转次数即可</li>
 </ul>
