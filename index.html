@@ -342,181 +342,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/STL——vector/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="z-Nico">
-      <meta itemprop="description" content="Have patience. All things are difficult before they become easy.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nico's Bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/STL——vector/" itemprop="url">
-                  STL——vector
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-04 19:53:12 / 修改时间：20:29:25" itemprop="dateCreated datePublished" datetime="2018-10-04T19:53:12+08:00">2018-10-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
-<ul>
-<li>int len = vec.size();</li>
-<li>vec.push_back(temp);</li>
-<li>vector::pop_back();     //删除最后一个元素</li>
-<li>初始化vector：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vec;   <span class="comment">//初始化为空</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vec(v1);  <span class="comment">//用另一个vector来初始化，即构造一个副本</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vec(n, i); <span class="comment">//大小为n，并全部初始化为元素i （常用）</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n); <span class="comment">//构造大小为n的容器，没有初始化里面的元素</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;; <span class="comment">//构造大小为4，并初始化里面的各个元素</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>遍历容器</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//迭代器</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="keyword">for</span>(it=vec.begin();it!=vec.end();it++)&#123;</span><br><span class="line">    vec[it]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//下标</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;vec.size();i++)&#123;</span><br><span class="line">    vec[i]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插入: vec.insert(vec.begin()+i,a);              //在第i个元素后面插入a;</p>
-</li>
-<li><p>删除: vec.erase(vec.begin()+2);                 //删除第3个元素</p>
-<pre><code>  vec.erase(vec.begin()+i,vec.end()+j);    //删除区间[i,j-1];区间从0开始
-</code></pre><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;vec.size();i++)&#123;</span><br><span class="line">    vec.erase(vec.begin()+i);</span><br><span class="line">    i--;                                          <span class="comment">//注意这里一定要i--</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>清空：vec.clear()                                //清空之后，vec.size()为０</p>
-</li>
-<li>判空：vec.empty();                               //判断是否为空，为空返回true,否则返回false;</li>
-<li>vec.resize(n+m);                                //调整vec的大小变为n+m</li>
-<li>vec.capacity();                                 //获取容器分配的存储空间，区别于vec,size()</li>
-<li>sort(vec.begin(),vec.end());</li>
-<li>reverse(vec.begin(), vec.end());                //反转</li>
-<li>swap(vec[i],vec[j]);</li>
-</ul>
-<h1 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h1><blockquote>
-<p>与其他容器不同，其内存空间只会增长，不会减小。先来看看”C++ Primer”中怎么说：为了支持快速的随机访<br>问，vector容器的元素以连续方式存放，每一个元素都紧挨着前一个元素存储。设想一下，当vector添加一个元素时，<br>为了满足连续存放这个特性，都需要重新分配空间、拷贝元素、撤销旧空间，这样性能难以接受。因此STL实现者在对<br>vector进行内存分配时，其实际分配的容量要比当前所需的空间多一些。就是说，vector容器预留了一些额外的存储<br>区，用于存放新添加的元素，这样就不必为每个新元素重新分配整个容器的内存空间。<br>关于vector的内存空间，有两个函数需要注意：size()成员指当前拥有的元素个数；capacity()成员指当前(容器必须分<br>配新存储空间之前)可以存储的元素个数。reserve()成员可以用来控制容器的预留空间。vector另外一个特性在于它的<br>内存空间会自增长，每当vector容器不得不分配新的存储空间时，会以加倍当前容量的分配策略实现重新分配。例如，<br>当前capacity为50，当添加第51个元素时，预留空间不够用了，vector容器会重新分配大小为100的内存空间，作为新<br>连续存储的位置。</p>
-</blockquote>
-<h1 id="内存释放"><a href="#内存释放" class="headerlink" title="内存释放"></a>内存释放</h1><blockquote>
-<p>由于vector的内存占用空间只增不减，比如你首先分配了10,000个字节，然后erase掉后面9,999个，留下一个有效元素，但是内存占<br>用仍为10,000个。所有内存空间是在vector析构时候才能被系统回收。empty()用来检测容器是否为空的，clear()可以清空所有元素。<br>但是即使clear()，vector所占用的内存空间依然如故，无法保证内存的回收，所以我们要用swap()。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">    v.push_back(<span class="number">1</span>);</span><br><span class="line">    v.push_back(<span class="number">2</span>);</span><br><span class="line">    v.push_back(<span class="number">3</span>);</span><br><span class="line">    v.push_back(<span class="number">4</span>);</span><br><span class="line">    v.push_back(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;().swap(v);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*输出：</span></span><br><span class="line"><span class="comment">size:5</span></span><br><span class="line"><span class="comment">capacity:6</span></span><br><span class="line"><span class="comment">after swap size:0</span></span><br><span class="line"><span class="comment">after swap capacity:0*/</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>或者shrink_to_fit();<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">    v.push_back(<span class="number">1</span>);</span><br><span class="line">    v.push_back(<span class="number">2</span>);</span><br><span class="line">    v.push_back(<span class="number">3</span>);</span><br><span class="line">    v.push_back(<span class="number">4</span>);</span><br><span class="line">    v.push_back(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    v.clear();</span><br><span class="line">    v.shrink_to_fit();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*输出：</span></span><br><span class="line"><span class="comment">size:5</span></span><br><span class="line"><span class="comment">capacity:6</span></span><br><span class="line"><span class="comment">after swap size:0</span></span><br><span class="line"><span class="comment">after swap capacity:0*/</span></span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/Corn-Fields-状压dp模板题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2030,6 +1855,182 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/调查问卷/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/三原色图-最小生成树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="description" content="Have patience. All things are difficult before they become easy.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nico's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/三原色图-最小生成树/" itemprop="url">
+                  三原色图(最小生成树)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-06 19:50:17" itemprop="dateCreated datePublished" datetime="2018-08-06T19:50:17+08:00">2018-08-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-22 14:48:07" itemprop="dateModified" datetime="2018-08-22T14:48:07+08:00">2018-08-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="传送门-HDU6349"><a href="#传送门-HDU6349" class="headerlink" title="传送门 HDU6349"></a>传送门 <a href="http://acm.hdu.edu.cn/showproblem.php?pid=6349" target="_blank" rel="noopener">HDU6349</a></h1><h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><blockquote>
+<p>度度熊有一张 n 个点 m 条边的无向图，所有点按照 1,2,⋯,n 标号，每条边有一个正整数权值以及一种色光三原色红、绿、蓝之一的颜色。<br>现在度度熊想选出恰好 k 条边，满足只用这 k 条边之中的红色边和绿色边就能使 n 个点之间两两连通，或者只用这 k 条边之中的蓝色边和绿色边就能使 n 个点之间两两连通，这里两个点连通是指从一个点出发沿着边可以走到另一个点。<br>对于每个 k=1,2,⋯,m，你都需要帮度度熊计算选出恰好 k 条满足条件的边的权值之和的最小值。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/三原色图-最小生成树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
