@@ -930,7 +930,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-04 23:02:54" itemprop="dateModified" datetime="2018-10-04T23:02:54+08:00">2018-10-04</time>
+                <time title="修改时间：2018-10-04 23:12:02" itemprop="dateModified" datetime="2018-10-04T23:12:02+08:00">2018-10-04</time>
               
             
           </span>
@@ -982,19 +982,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><blockquote>
-<h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<stack></stack></h1><p>stack<int>s;<br>入栈：push()；<br>出栈：pop();<br>取栈顶top()；</int></p>
-</blockquote>
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><blockquote>
-<h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<queue></queue></h1><p>queue<int>s;<br>入队：push();<br>出队：pop();<br>取队首元素：front();(不删除)</int></p>
-</blockquote>
-<h1 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h1><blockquote>
-<p>priority_queue<int>pq;<br>入队：push();<br>出队：pop();<br>取队首元素：top();(不删除) 这里取的队首元素是优先级最高的元素，pq是一个数越大优先级越高的优先对列  priority_queue<int,vector<int>,greater<int> &gt;s; 这里s是一个数越小优先级越高的优先对列</int></int,vector<int></int></p>
-</blockquote>
-
-          
+          <p>。。。。。。。。。。。。。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/STL——栈-队列与优先队列/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1109,7 +1104,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-04 23:08:27" itemprop="dateModified" datetime="2018-10-04T23:08:27+08:00">2018-10-04</time>
+                <time title="修改时间：2018-10-04 23:11:58" itemprop="dateModified" datetime="2018-10-04T23:11:58+08:00">2018-10-04</time>
               
             
           </span>
@@ -1161,7 +1156,7 @@
 
       
         
-          <h1 id="map的使用方法"><a href="#map的使用方法" class="headerlink" title="map的使用方法"></a>map的使用方法</h1><p>。。。。。。。。。。。。。。。<br>
+          <p>。。。。。。。。。。。。。。。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/STL——map/#more" rel="contents">
@@ -1283,7 +1278,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-04 22:59:11" itemprop="dateModified" datetime="2018-10-04T22:59:11+08:00">2018-10-04</time>
+                <time title="修改时间：2018-10-04 23:11:56" itemprop="dateModified" datetime="2018-10-04T23:11:56+08:00">2018-10-04</time>
               
             
           </span>
@@ -1335,49 +1330,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p><strong>set即为集合，拥有集合的特征：元素不重复</strong></p>
-<ul>
-<li>不能直接改变元素值，因为那样会打乱原本正确的顺序，要改变元素值必须先删除旧元素，则插入新元素</li>
-<li>不提供直接存取元素的任何操作函数，只能通过迭代器进行间接存取，而且从迭代器角度来看，元素值是常数</li>
-</ul>
-<h1 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h1><ul>
-<li><p>遍历：只能用迭代器</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">......</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="keyword">for</span>(it=s.begin();it!=s.end();it++)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>反向遍历：利用反向迭代器reverse_iterator。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">......</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator rit;</span><br><span class="line"><span class="keyword">for</span>(rit=s.rbegin();rit!=s.rend();rit++)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插入：insert()</p>
-</li>
-<li>删除：erase(2)</li>
-<li>清空：clear()</li>
-<li>查找：find()  若找到，返回该键值迭代器的位置，否则，返回最后一个元素后面一个位置。</li>
-</ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
-<p>c++ stl容器set成员函数:begin()—返回指向第一个元素的迭代器;</p>
-<p>c++ stl容器set成员函数:clear()—清除所有元素;</p>
-<p>c++ stl容器set成员函数:count()—返回某个值元素的个数;</p>
-<p>c++ stl容器set成员函数:empty()—如果集合为空，返回true;</p>
-<p>c++ stl容器set成员函数:end()—返回指向最后一个元素的迭代器;</p>
-<p>c++ stl容器set成员函数:equal_range()—返回集合中与给定值相等的上下限的两个迭代器;</p>
-<p>c++ stl容器set成员函数:erase()—删除集合中的元素;</p>
-<p>c++ stl容器set成员函数:find()—返回一个指向被查找到元素的迭代器;</p>
-<p>c++ stl容器set成员函数:get_allocator()—返回集合的分配器;</p>
-<p>c++ stl容器set成员函数:insert()—在集合中插入元素;</p>
-<p>c++ stl容器set成员函数:lower_bound()—返回指向大于（或等于）某值的第一个元素的迭代器;</p>
-<p>c++ stl容器set成员函数:key_comp()—返回一个用于元素间值比较的函数;</p>
-<p>c++ stl容器set成员函数:max_size()—返回集合能容纳的元素的最大限值;</p>
-<p>c++ stl容器set成员函数:rbegin()—返回指向集合中最后一个元素的反向迭代器;</p>
-<p>c++ stl容器set成员函数:rend()—返回指向集合中第一个元素的反向迭代器;</p>
-<p>c++ stl容器set成员函数:size()—集合中元素的数目;</p>
-<p>c++ stl容器set成员函数:swap()—交换两个集合变量;</p>
-<p>c++ stl容器set成员函数:upper_bound()—返回大于某个值元素的迭代器;</p>
-<p>c++ stl容器set成员函数:value_comp()—返回一个用于比较元素间的值的函数;</p>
-</blockquote>
-
-          
+          <p>。。。。。。。。。。。。。。。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/STL——set/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1492,7 +1452,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-04 22:59:09" itemprop="dateModified" datetime="2018-10-04T22:59:09+08:00">2018-10-04</time>
+                <time title="修改时间：2018-10-04 23:11:59" itemprop="dateModified" datetime="2018-10-04T23:11:59+08:00">2018-10-04</time>
               
             
           </span>
@@ -1544,45 +1504,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
-<ul>
-<li>int len = vec.size();</li>
-<li>vec.push_back(temp);</li>
-<li>vector::pop_back();     //删除最后一个元素</li>
-<li>初始化vector：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vec;   <span class="comment">//初始化为空</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vec(v1);  <span class="comment">//用另一个vector来初始化，即构造一个副本</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vec(n, i); <span class="comment">//大小为n，并全部初始化为元素i （常用）</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n); <span class="comment">//构造大小为n的容器，没有初始化里面的元素</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;; <span class="comment">//构造大小为4，并初始化里面的各个元素</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>遍历容器</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//迭代器</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="keyword">for</span>(it=vec.begin();it!=vec.end();it++)&#123;</span><br><span class="line">    vec[it]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//下标</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;vec.size();i++)&#123;</span><br><span class="line">    vec[i]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插入: vec.insert(vec.begin()+i,a);              //在第i个元素后面插入a;</p>
-</li>
-<li><p>删除: vec.erase(vec.begin()+2);                 //删除第3个元素</p>
-<pre><code>  vec.erase(vec.begin()+i,vec.end()+j);    //删除区间[i,j-1];区间从0开始
-</code></pre><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;vec.size();i++)&#123;</span><br><span class="line">    vec.erase(vec.begin()+i);</span><br><span class="line">    i--;                                          <span class="comment">//注意这里一定要i--</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>清空：vec.clear()                                //清空之后，vec.size()为０</p>
-</li>
-<li>判空：vec.empty();                               //判断是否为空，为空返回true,否则返回false;</li>
-<li>vec.resize(n+m);                                //调整vec的大小变为n+m</li>
-<li>vec.capacity();                                 //获取容器分配的存储空间，区别于vec,size()</li>
-<li>sort(vec.begin(),vec.end());</li>
-<li>reverse(vec.begin(), vec.end());                //反转</li>
-<li>swap(vec[i],vec[j]);</li>
-</ul>
-<h1 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h1><blockquote>
-<p>与其他容器不同，其内存空间只会增长，不会减小。先来看看”C++ Primer”中怎么说：为了支持快速的随机访<br>问，vector容器的元素以连续方式存放，每一个元素都紧挨着前一个元素存储。设想一下，当vector添加一个元素时，<br>为了满足连续存放这个特性，都需要重新分配空间、拷贝元素、撤销旧空间，这样性能难以接受。因此STL实现者在对<br>vector进行内存分配时，其实际分配的容量要比当前所需的空间多一些。就是说，vector容器预留了一些额外的存储<br>区，用于存放新添加的元素，这样就不必为每个新元素重新分配整个容器的内存空间。<br>关于vector的内存空间，有两个函数需要注意：size()成员指当前拥有的元素个数；capacity()成员指当前(容器必须分<br>配新存储空间之前)可以存储的元素个数。reserve()成员可以用来控制容器的预留空间。vector另外一个特性在于它的<br>内存空间会自增长，每当vector容器不得不分配新的存储空间时，会以加倍当前容量的分配策略实现重新分配。例如，<br>当前capacity为50，当添加第51个元素时，预留空间不够用了，vector容器会重新分配大小为100的内存空间，作为新<br>连续存储的位置。</p>
-</blockquote>
-<h1 id="内存释放"><a href="#内存释放" class="headerlink" title="内存释放"></a>内存释放</h1><blockquote>
-<p>由于vector的内存占用空间只增不减，比如你首先分配了10,000个字节，然后erase掉后面9,999个，留下一个有效元素，但是内存占<br>用仍为10,000个。所有内存空间是在vector析构时候才能被系统回收。empty()用来检测容器是否为空的，clear()可以清空所有元素。<br>但是即使clear()，vector所占用的内存空间依然如故，无法保证内存的回收，所以我们要用swap()。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">    v.push_back(<span class="number">1</span>);</span><br><span class="line">    v.push_back(<span class="number">2</span>);</span><br><span class="line">    v.push_back(<span class="number">3</span>);</span><br><span class="line">    v.push_back(<span class="number">4</span>);</span><br><span class="line">    v.push_back(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;().swap(v);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*输出：</span></span><br><span class="line"><span class="comment">size:5</span></span><br><span class="line"><span class="comment">capacity:6</span></span><br><span class="line"><span class="comment">after swap size:0</span></span><br><span class="line"><span class="comment">after swap capacity:0*/</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>或者shrink_to_fit();<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">    v.push_back(<span class="number">1</span>);</span><br><span class="line">    v.push_back(<span class="number">2</span>);</span><br><span class="line">    v.push_back(<span class="number">3</span>);</span><br><span class="line">    v.push_back(<span class="number">4</span>);</span><br><span class="line">    v.push_back(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    v.clear();</span><br><span class="line">    v.shrink_to_fit();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap size:"</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"after swap capacity:"</span> &lt;&lt; v.capacity() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*输出：</span></span><br><span class="line"><span class="comment">size:5</span></span><br><span class="line"><span class="comment">capacity:6</span></span><br><span class="line"><span class="comment">after swap size:0</span></span><br><span class="line"><span class="comment">after swap capacity:0*/</span></span><br></pre></td></tr></table></figure></p>
-
-          
+          <p>。。。。。。。。。。。。。。。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/STL——vector/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1697,7 +1626,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-04 23:05:15" itemprop="dateModified" datetime="2018-10-04T23:05:15+08:00">2018-10-04</time>
+                <time title="修改时间：2018-10-04 23:12:04" itemprop="dateModified" datetime="2018-10-04T23:12:04+08:00">2018-10-04</time>
               
             
           </span>
@@ -1731,7 +1660,7 @@
 
       
         
-          <h1 id="简单数论合集"><a href="#简单数论合集" class="headerlink" title="简单数论合集"></a>简单数论合集</h1>
+          <p>。。。。。。。。。。。。。。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/数论套餐/#more" rel="contents">
