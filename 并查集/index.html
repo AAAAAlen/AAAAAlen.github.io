@@ -115,27 +115,25 @@
 
 
 
-  <meta name="description" content="传送门：POJ - 2155题目描述 Given an N*N matrix A, whose elements are either 0 or 1. A[i, j] means the number in the i-th row and j-th column. Initially we have A[i, j] = 0 (1 &amp;lt;= i, j &amp;lt;= N).We can change">
-<meta name="keywords" content="树状数组">
+  <meta name="description" content="并查集">
+<meta name="keywords" content="并查集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Matrix (二维树状数组)">
-<meta property="og:url" content="https://aaaaalen.github.io/Matrix-二维树状数组/index.html">
+<meta property="og:title" content="并查集">
+<meta property="og:url" content="https://aaaaalen.github.io/并查集/index.html">
 <meta property="og:site_name" content="Nico&#39;s Bolg">
-<meta property="og:description" content="传送门：POJ - 2155题目描述 Given an N*N matrix A, whose elements are either 0 or 1. A[i, j] means the number in the i-th row and j-th column. Initially we have A[i, j] = 0 (1 &amp;lt;= i, j &amp;lt;= N).We can change">
+<meta property="og:description" content="并查集">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz35ygabdj30ox0g8wep.jpg">
-<meta property="og:updated_time" content="2018-09-30T11:53:55.571Z">
+<meta property="og:updated_time" content="2018-10-06T16:17:32.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Matrix (二维树状数组)">
-<meta name="twitter:description" content="传送门：POJ - 2155题目描述 Given an N*N matrix A, whose elements are either 0 or 1. A[i, j] means the number in the i-th row and j-th column. Initially we have A[i, j] = 0 (1 &amp;lt;= i, j &amp;lt;= N).We can change">
-<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz35ygabdj30ox0g8wep.jpg">
+<meta name="twitter:title" content="并查集">
+<meta name="twitter:description" content="并查集">
 
 
 
 
 
 
-  <link rel="canonical" href="https://aaaaalen.github.io/Matrix-二维树状数组/"/>
+  <link rel="canonical" href="https://aaaaalen.github.io/并查集/"/>
 
 
 
@@ -145,7 +143,7 @@
   };
 </script>
 
-  <title>Matrix (二维树状数组) | Nico's Bolg</title>
+  <title>并查集 | Nico's Bolg</title>
   
 
 
@@ -345,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/Matrix-二维树状数组/">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/并查集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="z-Nico">
@@ -362,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Matrix (二维树状数组)
+          <h1 class="post-title" itemprop="name headline">并查集
               
             
           </h1>
@@ -387,7 +385,7 @@
                 
               
 
-              <time title="创建时间：2018-09-05 23:18:05" itemprop="dateCreated datePublished" datetime="2018-09-05T23:18:05+08:00">2018-09-05</time>
+              <time title="创建时间：2018-08-06 23:44:50" itemprop="dateCreated datePublished" datetime="2018-08-06T23:44:50+08:00">2018-08-06</time>
             
 
             
@@ -404,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-30 19:53:55" itemprop="dateModified" datetime="2018-09-30T19:53:55+08:00">2018-09-30</time>
+                <time title="修改时间：2018-10-07 00:17:32" itemprop="dateModified" datetime="2018-10-07T00:17:32+08:00">2018-10-07</time>
               
             
           </span>
@@ -463,34 +461,11 @@
       
 
       
-        <h1 id="传送门：POJ-2155"><a href="#传送门：POJ-2155" class="headerlink" title="传送门：POJ - 2155"></a>传送门：<a href="https://vjudge.net/contest/244678#problem/E" target="_blank" rel="noopener">POJ - 2155</a></h1><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>Given an N*N matrix A, whose elements are either 0 or 1. A[i, j] means the number in the i-th row and j-th column. Initially we have A[i, j] = 0 (1 &lt;= i, j &lt;= N).<br>We can change the matrix in the following way. Given a rectangle whose upper-left corner is (x1, y1) and lower-right corner is (x2, y2), we change all the elements in the rectangle by using “not” operation (if it is a ‘0’ then change it into ‘1’ otherwise change it into ‘0’). To maintain the information of the matrix, you are asked to write a program to receive and execute two kinds of instructions. </p>
-<ol>
-<li>C x1 y1 x2 y2 (1 &lt;= x1 &lt;= x2 &lt;= n, 1 &lt;= y1 &lt;= y2 &lt;= n) changes the matrix by using the rectangle whose upper-left corner is (x1, y1) and lower-right corner is (x2, y2). </li>
-<li>Q x y (1 &lt;= x, y &lt;= n) querys A[x, y]. <a id="more"></a>
-</li>
-</ol>
+        <p>并查集<br><a id="more"></a></p>
+<blockquote>
+<p>用数组f[]存放每一个节点的父节点，通过find（a）递归访问最终父节点，若两个节点的最终父节点相等，则在同一个集合，否则通过f[find（a）]=find（b）的方式将两树结合<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f[n]==n?n:f[n]=find(f[n]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">1005</span>; i++)</span><br><span class="line">            f[i]=i;</span><br><span class="line">        <span class="keyword">int</span> tou;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> sa,sb;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;sa,&amp;sb);</span><br><span class="line">            <span class="keyword">int</span> a=find(sa),b=find(sb);</span><br><span class="line">            <span class="keyword">if</span>(a==b)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> f[a]=b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> cnt[<span class="number">1005</span>];</span><br><span class="line">        <span class="built_in">memset</span>(cnt,<span class="number">0</span>,<span class="keyword">sizeof</span>(cnt));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">            cnt[find(i)]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[i]!=<span class="number">0</span>) num++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,num<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
-<p>The first line of the input is an integer X (X &lt;= 10) representing the number of test cases. The following X blocks each represents a test case.<br>The first line of each block contains two numbers N and T (2 &lt;= N &lt;= 1000, 1 &lt;= T &lt;= 50000) representing the size of the matrix and the number of the instructions. The following T lines each represents an instruction having the format “Q x y” or “C x1 y1 x2 y2”, which has been described above. </p>
-</blockquote>
-<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
-<p>For each querying output one line, which has an integer representing A[x, y].<br>There is a blank line between every two continuous test cases. </p>
-</blockquote>
-<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
-<ul>
-<li>Input<br>1<br>2 10<br>C 2 1 2 2<br>Q 2 2<br>C 2 1 2 1<br>Q 1 1<br>C 1 1 2 1<br>C 1 2 1 2<br>C 1 1 2 2<br>Q 1 1<br>C 1 1 2 1<br>Q 2 1</li>
-<li>Output<br>1<br>0<br>0<br>1</li>
-</ul>
-</blockquote>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
-<ul>
-<li>题意：<br>C——以(x1,y1)为左上角，(x2,y2)为右上角的矩阵，每个元素01取反<br>Q——询问(x,y)的值</li>
-<li>结合矩阵翻转，将区间修改单点查询转变成单点修改区间求和。</li>
-<li>用二维树状数组保存点的修改次数，修改的时候进行如下操作：<br><img src="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz35ygabdj30ox0g8wep.jpg" alt=""><br>黄色部分为本次需要修改的区间，我们对四个绿色点进行add操作，也就是将每个绿色点右下角部分的矩阵进行翻转，这样我们进行四次单点修改就完成了整个区间的修改。而要查询某个点的值时，求出它的翻转次数即可</li>
-</ul>
-</blockquote>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="comment">//b——0,-1,128,0x3f,127 ,字符 </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Pi = <span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E = <span class="built_in">exp</span>(<span class="number">1.0</span>); </span><br><span class="line"><span class="keyword">const</span> LL mod =<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MIN=<span class="number">-0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N,M,tree[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; -x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=N;i+=lowbit(i))</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=y;j&lt;=N;j+=lowbit(j))</span><br><span class="line">            tree[i][j]+=num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&gt;<span class="number">0</span>;i-=lowbit(i))</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=y;j&gt;<span class="number">0</span>;j-=lowbit(j))</span><br><span class="line">            sum+=tree[i][j];</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> _,x1,y1,x2,y2;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;_);</span><br><span class="line">    <span class="keyword">while</span>(_--)&#123;</span><br><span class="line">        INIT(tree,<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;M);</span><br><span class="line">        <span class="keyword">char</span> x;</span><br><span class="line">        <span class="keyword">while</span>(M--)&#123;</span><br><span class="line">            getchar();</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;x);</span><br><span class="line">            <span class="keyword">if</span>(x==<span class="string">'C'</span>)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;x1,&amp;y1,&amp;x2,&amp;y2);</span><br><span class="line">                add(x1,y1,<span class="number">1</span>);</span><br><span class="line">                add(x2+<span class="number">1</span>,y1,<span class="number">1</span>);</span><br><span class="line">                add(x1,y2+<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">                add(x2+<span class="number">1</span>,y2+<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="string">'Q'</span>)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x1,&amp;y1);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,count(x1,y1)%<span class="number">2</span>);</span><br><span class="line">            &#125;			</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(M)<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;	</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -540,7 +515,7 @@
     <strong>本文作者： </strong>z-Nico</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aaaaalen.github.io/Matrix-二维树状数组/" title="Matrix (二维树状数组)">https://aaaaalen.github.io/Matrix-二维树状数组/</a>
+    <a href="https://aaaaalen.github.io/并查集/" title="并查集">https://aaaaalen.github.io/并查集/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -553,7 +528,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树状数组/" rel="tag"># 树状数组</a>
+            <a href="/tags/并查集/" rel="tag"># 并查集</a>
           
         </div>
       
@@ -566,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Mobile-phones-二维树状数组/" rel="next" title="Mobile phones(二维树状数组)">
-                <i class="fa fa-chevron-left"></i> Mobile phones(二维树状数组)
+              <a href="/最小生成树-prim算法/" rel="next" title="最小生成树(Prim算法)">
+                <i class="fa fa-chevron-left"></i> 最小生成树(Prim算法)
               </a>
             
           </div>
@@ -576,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Corn-Fields-状压dp模板题/" rel="prev" title="Corn Fields(状压dp模板题)">
-                Corn Fields(状压dp模板题) <i class="fa fa-chevron-right"></i>
+              <a href="/最小生成树-Kruskal算法/" rel="prev" title="最小生成树(Kruskal算法)">
+                最小生成树(Kruskal算法) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -623,17 +598,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -781,22 +747,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传送门：POJ-2155"><span class="nav-number">1.</span> <span class="nav-text">传送门：POJ - 2155</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入"><span class="nav-number">3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出"><span class="nav-number">4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例"><span class="nav-number">5.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">6.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
