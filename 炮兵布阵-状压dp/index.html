@@ -115,25 +115,27 @@
 
 
 
-  <meta name="description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
-<meta name="keywords" content="背包问题">
+  <meta name="description" content="传送门 poj1185题目描述 司令部的将军们打算在NM的网格地图上部署他们的炮兵部队。一个NM的地图由N行M列组成，地图的每一格可能是山地（用”H” 表示），也可能是平原（用”P”表示），如下图。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围如图中黑色区域所示：如果在地图中的灰色所标识的平原上部署一支炮兵部队，则图中的黑色的网格表示它能够攻">
+<meta name="keywords" content="状压dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="01背包">
-<meta property="og:url" content="https://aaaaalen.github.io/01背包/index.html">
+<meta property="og:title" content="炮兵布阵(状压dp)">
+<meta property="og:url" content="https://aaaaalen.github.io/炮兵布阵-状压dp/index.html">
 <meta property="og:site_name" content="Nico&#39;s Bolg">
-<meta property="og:description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
+<meta property="og:description" content="传送门 poj1185题目描述 司令部的将军们打算在NM的网格地图上部署他们的炮兵部队。一个NM的地图由N行M列组成，地图的每一格可能是山地（用”H” 表示），也可能是平原（用”P”表示），如下图。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围如图中黑色区域所示：如果在地图中的灰色所标识的平原上部署一支炮兵部队，则图中的黑色的网格表示它能够攻">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-02T16:12:15.109Z">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fwh92f9zxej307n04wmxe.jpg">
+<meta property="og:updated_time" content="2018-10-28T08:49:46.603Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="01背包">
-<meta name="twitter:description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
+<meta name="twitter:title" content="炮兵布阵(状压dp)">
+<meta name="twitter:description" content="传送门 poj1185题目描述 司令部的将军们打算在NM的网格地图上部署他们的炮兵部队。一个NM的地图由N行M列组成，地图的每一格可能是山地（用”H” 表示），也可能是平原（用”P”表示），如下图。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围如图中黑色区域所示：如果在地图中的灰色所标识的平原上部署一支炮兵部队，则图中的黑色的网格表示它能够攻">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fwh92f9zxej307n04wmxe.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://aaaaalen.github.io/01背包/"/>
+  <link rel="canonical" href="https://aaaaalen.github.io/炮兵布阵-状压dp/"/>
 
 
 
@@ -143,7 +145,7 @@
   };
 </script>
 
-  <title>01背包 | Nico's Bolg</title>
+  <title>炮兵布阵(状压dp) | Nico's Bolg</title>
   
 
 
@@ -343,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/01背包/">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/炮兵布阵-状压dp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="z-Nico">
@@ -360,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">01背包
+          <h1 class="post-title" itemprop="name headline">炮兵布阵(状压dp)
               
             
           </h1>
@@ -385,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2018-08-05 14:08:40" itemprop="dateCreated datePublished" datetime="2018-08-05T14:08:40+08:00">2018-08-05</time>
+              <time title="创建时间：2018-10-22 19:56:55" itemprop="dateCreated datePublished" datetime="2018-10-22T19:56:55+08:00">2018-10-22</time>
             
 
             
@@ -402,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-03 00:12:15" itemprop="dateModified" datetime="2018-10-03T00:12:15+08:00">2018-10-03</time>
+                <time title="修改时间：2018-10-28 16:49:46" itemprop="dateModified" datetime="2018-10-28T16:49:46+08:00">2018-10-28</time>
               
             
           </span>
@@ -461,33 +463,26 @@
       
 
       
-        <h1 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h1><blockquote>
-<p>现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？<br><a id="more"></a></p>
+        <h1 id="传送门-poj1185"><a href="#传送门-poj1185" class="headerlink" title="传送门 poj1185"></a>传送门 <a href="http://poj.org/problem?id=1185" target="_blank" rel="noopener">poj1185</a></h1><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
+<p>司令部的将军们打算在N<em>M的网格地图上部署他们的炮兵部队。一个N</em>M的地图由N行M列组成，地图的每一格可能是山地（用”H” 表示），也可能是平原（用”P”表示），如下图。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围如图中黑色区域所示：<br><img src="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fwh92f9zxej307n04wmxe.jpg" alt=""><br>如果在地图中的灰色所标识的平原上部署一支炮兵部队，则图中的黑色的网格表示它能够攻击到的区域：沿横向左右各两格，沿纵向上下各两格。图上其它白色网格均攻击不到。从图上可见炮兵的攻击范围不受地形的影响。<br>现在，将军们规划如何部署炮兵部队，在防止误伤的前提下（保证任何两支炮兵部队之间不能互相攻击，即任何一支炮兵部队都不在其他支炮兵部队的攻击范围内），在整个地图区域内最多能够摆放多少我军的炮兵部队。<br><a id="more"></a></p>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><p>第一行包含两个由空格分割开的正整数，分别表示N和M；<br>接下来的N行，每一行含有连续的M个字符(‘P’或者’H’)，中间没有空格。按顺序表示地图中每一行的数据。N &lt;= 100；M &lt;= 10。</p>
 </blockquote>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><blockquote>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
+<p>仅一行，包含一个整数K，表示最多能摆放的炮兵部队的数量。</p>
+</blockquote>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
 <ul>
-<li>每个物体只有拿和不拿两种情况，则在选择是否拿第i件时，在之前已确定部分的基础上进行比较判断即可</li>
-<li>申请一个二维数组dp[][]，用dp[i][j]来表示在物品数量为i，总重量为j的条件下能达到的最大价值，那么dp[i][j]的值为：<script type="math/tex; mode=display">dp[i][j]=Max
-\begin{cases}
-dp[i-1][j] &\mbox{不拿第i个，状态跟i-1一样}\\
-dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上第i个的价值v[i]}
-\end{cases}</script>最后dp[n][V]即为答案</li>
+<li>Input<br>5 4<br>PHPP<br>PPHH<br>PPPP<br>PHPP<br>PHHP</li>
+<li>Output<br>6</li>
 </ul>
 </blockquote>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=V;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=j)f[i][j]=max(f[i<span class="number">-1</span>][j],f[i<span class="number">-1</span>][j-w[i]]+v[i]);			</span><br><span class="line">        <span class="keyword">else</span> f[i][j]=f[i<span class="number">-1</span>][j];</span><br><span class="line">        <span class="comment">//f[i-1][j]没拿时的价值,f[i-1][j-a[i]]+b[i]拿了之后的价值 </span></span><br><span class="line">        <span class="comment">//i为前i个物体，j为剩余背包空间 </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><blockquote>
 <ul>
-<li>前面的代码在时间复杂度上已经无法继续优化，但是在空间复杂度上，因为我们只需要最多取n个的答案，所以我们可以在dp[i][j]的基础上去掉物体数这一维，那么dp[j]的值就为：<script type="math/tex; mode=display">dp[j]=Max(dp[j] , dp[j-w[j]]+v[j])</script></li>
+<li>跟前面的玉米地类似，但是这道题不仅要跟上一行进行比较，还要跟上上行进行比较。</li>
+<li>我们用数组sta来存放所有不会产生横向冲突的状态，用数组num来存放每个状态所对应的炮兵数，用dp[i][stai][pre]表示第i行中第stai个状态、i-1行pre状态下的炮兵最大数，用dp[i-1][pre][prepre]表示i-1行pre状态、i-2行prepre状态下的炮兵最大数，中间需要判断stai、pre、以及prepre三种状态之间是否相互冲突。状态转移方程为：<br>dp[i][stai][pre]=max(dp[i][stai][pre],dp[i-1][pre][prepre]+num[stai])</li>
 </ul>
 </blockquote>
-<h1 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=V;j&gt;=w[i];j--)</span><br><span class="line">        dp[j]=max(dp[j] , dp[j-w[j]]+v[j]);</span><br></pre></td></tr></table></figure>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><blockquote>
-<ul>
-<li>在遍历重量的时候是V-&gt;w[i]，并不是w[i]-&gt;V，其原因是：<strong>第i个物体的状态只与i-1有关，我们在操作dp[j]的时候必须保证dp[j-w[i]]是上一次操作后的结果</strong>，如果从w[i]-&gt;V，那么dp[j-w[i]]的值在操作dp[j]之前就已经发生了改变，里面存的不是i-1时刻的值</li>
-<li>数组dp的值要全部初始化为0</li>
-</ul>
-</blockquote>
-
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxN=<span class="number">1e7</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MIN=<span class="number">-0x7fffffff</span>;</span><br><span class="line"><span class="keyword">int</span> cant[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> sta[<span class="number">100</span>],num[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> N,M,All=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">105</span>][<span class="number">105</span>][<span class="number">105</span>];<span class="comment">//dp[i][sta][pre]i行状态sta和i-1行pre，dp[i][sta][prepre]i行状态sta和i-2行prepre，</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;N&gt;&gt;M;</span><br><span class="line">    <span class="keyword">char</span> x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)&#123;<span class="comment">//保存每一行中在山上放满的状态，用于排除放置在山上的状态</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=M;j++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            <span class="keyword">if</span>(x==<span class="string">'H'</span>) cant[i]+=(<span class="number">1</span>&lt;&lt;(M-j));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;M);i++)&#123;<span class="comment">//保存所有可行状态并算出该状态的炮兵数</span></span><br><span class="line">        <span class="keyword">if</span>((i&amp;(i&lt;&lt;<span class="number">1</span>))||(i&amp;(i&lt;&lt;<span class="number">2</span>)))<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> k=i;</span><br><span class="line">        <span class="keyword">while</span>(k)&#123;</span><br><span class="line">            num[All]+=(k&amp;<span class="number">1</span>);</span><br><span class="line">            k=k&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sta[All++]=i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;All;i++)&#123;             <span class="comment">//处理第一行</span></span><br><span class="line">        <span class="keyword">if</span>(sta[i]&amp;cant[<span class="number">1</span>])<span class="keyword">continue</span>;</span><br><span class="line">        dp[<span class="number">1</span>][i][<span class="number">1</span>]=num[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;All;i++)&#123;             <span class="comment">//处理第二行</span></span><br><span class="line">        <span class="keyword">if</span>(sta[i]&amp;cant[<span class="number">2</span>])<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;All;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sta[j]&amp;cant[<span class="number">1</span>])<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(sta[j]&amp;sta[i])<span class="keyword">continue</span>;</span><br><span class="line">            dp[<span class="number">2</span>][i][j]=max(dp[<span class="number">2</span>][i][j],dp[<span class="number">1</span>][j][<span class="number">1</span>]+num[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=N;i++)&#123;                              <span class="comment">//从第三行开始枚举每一行</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> stai=<span class="number">0</span>;stai&lt;All;stai++)&#123;                <span class="comment">//枚举这一行的所有状态</span></span><br><span class="line">            <span class="keyword">if</span>(sta[stai]&amp;cant[i])<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> pre=<span class="number">0</span>;pre&lt;All;pre++)&#123;               <span class="comment">//枚举上一行的所有状态，不能和i行冲突</span></span><br><span class="line">                <span class="keyword">if</span>(sta[pre]&amp;cant[i<span class="number">-1</span>])<span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(sta[pre]&amp;sta[stai])<span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> prepre=<span class="number">0</span>;prepre&lt;All;prepre++)&#123;  <span class="comment">//枚举上上行的所有状态，不能跟i行和i-1行冲突</span></span><br><span class="line">                    <span class="keyword">if</span>(sta[prepre]&amp;cant[i<span class="number">-2</span>])<span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span>(sta[prepre]&amp;sta[stai])<span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span>(sta[prepre]&amp;sta[pre])<span class="keyword">continue</span>;</span><br><span class="line">                    dp[i][stai][pre]=max(dp[i<span class="number">-1</span>][pre][prepre]+num[stai],dp[i][stai][pre]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;All;i++)                               <span class="comment">//枚举状态找最值</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;All;j++)</span><br><span class="line">            ans=max(ans,dp[N][i][j]);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -537,7 +532,7 @@ dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上�
     <strong>本文作者： </strong>z-Nico</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aaaaalen.github.io/01背包/" title="01背包">https://aaaaalen.github.io/01背包/</a>
+    <a href="https://aaaaalen.github.io/炮兵布阵-状压dp/" title="炮兵布阵(状压dp)">https://aaaaalen.github.io/炮兵布阵-状压dp/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -550,7 +545,7 @@ dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上�
       
         <div class="post-tags">
           
-            <a href="/tags/背包问题/" rel="tag"># 背包问题</a>
+            <a href="/tags/状压dp/" rel="tag"># 状压dp</a>
           
         </div>
       
@@ -563,8 +558,8 @@ dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/STL——栈-队列与优先队列/" rel="next" title="栈 队列与优先队列">
-                <i class="fa fa-chevron-left"></i> 栈 队列与优先队列
+              <a href="/Most-Powerful-状压dp/" rel="next" title="Most Powerful(状压dp)">
+                <i class="fa fa-chevron-left"></i> Most Powerful(状压dp)
               </a>
             
           </div>
@@ -572,10 +567,6 @@ dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/完全背包/" rel="prev" title="完全背包">
-                完全背包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -788,7 +779,7 @@ dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#描述："><span class="nav-number">1.</span> <span class="nav-text">描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化"><span class="nav-number">4.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-1"><span class="nav-number">5.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意"><span class="nav-number">6.</span> <span class="nav-text">注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传送门-poj1185"><span class="nav-number">1.</span> <span class="nav-text">传送门 poj1185</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入"><span class="nav-number">3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出"><span class="nav-number">4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例"><span class="nav-number">5.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
 
           </div>
