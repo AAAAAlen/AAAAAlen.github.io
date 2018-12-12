@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Nico&#39;s Bolg">
 <meta property="og:description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-02T16:12:15.109Z">
+<meta property="og:updated_time" content="2018-12-12T15:13:52.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01背包">
 <meta name="twitter:description" content="描述： 现有n个物体和容量为V的背包，每个物体i都有对应的重量w[i]和价值v[i]，每个物体最多拿一次，在所取物体总重量不超过V的情况下，能获得的最大价值是多少？">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-03 00:12:15" itemprop="dateModified" datetime="2018-10-03T00:12:15+08:00">2018-10-03</time>
+                <time title="修改时间：2018-12-12 23:13:52" itemprop="dateModified" datetime="2018-12-12T23:13:52+08:00">2018-12-12</time>
               
             
           </span>
@@ -477,10 +477,10 @@ dp[i-1][j-w[i]]+v[i]&\mbox{拿第i个，就用重量为j-w[i]的价值来加上�
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=V;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=j)f[i][j]=max(f[i<span class="number">-1</span>][j],f[i<span class="number">-1</span>][j-w[i]]+v[i]);			</span><br><span class="line">        <span class="keyword">else</span> f[i][j]=f[i<span class="number">-1</span>][j];</span><br><span class="line">        <span class="comment">//f[i-1][j]没拿时的价值,f[i-1][j-a[i]]+b[i]拿了之后的价值 </span></span><br><span class="line">        <span class="comment">//i为前i个物体，j为剩余背包空间 </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><blockquote>
 <ul>
-<li>前面的代码在时间复杂度上已经无法继续优化，但是在空间复杂度上，因为我们只需要最多取n个的答案，所以我们可以在dp[i][j]的基础上去掉物体数这一维，那么dp[j]的值就为：<script type="math/tex; mode=display">dp[j]=Max(dp[j] , dp[j-w[j]]+v[j])</script></li>
+<li>前面的代码在时间复杂度上已经无法继续优化，但是在空间复杂度上，因为我们只需要最多取n个的答案，所以我们可以在dp[i][j]的基础上去掉物体数这一维，那么dp[j]的值就为：<script type="math/tex; mode=display">dp[j]=Max(dp[j] , dp[j-w[i]]+v[i])</script></li>
 </ul>
 </blockquote>
-<h1 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=V;j&gt;=w[i];j--)</span><br><span class="line">        dp[j]=max(dp[j] , dp[j-w[j]]+v[j]);</span><br></pre></td></tr></table></figure>
+<h1 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=V;j&gt;=w[i];j--)</span><br><span class="line">        dp[j]=max(dp[j] , dp[j-w[i]]+v[i]);</span><br></pre></td></tr></table></figure>
 <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><blockquote>
 <ul>
 <li>在遍历重量的时候是V-&gt;w[i]，并不是w[i]-&gt;V，其原因是：<strong>第i个物体的状态只与i-1有关，我们在操作dp[j]的时候必须保证dp[j-w[i]]是上一次操作后的结果</strong>，如果从w[i]-&gt;V，那么dp[j-w[i]]的值在操作dp[j]之前就已经发生了改变，里面存的不是i-1时刻的值</li>
