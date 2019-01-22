@@ -124,7 +124,7 @@
 <meta property="og:description" content="描述 小a和小b来到了一条布满了黄金的街道上。它们想要带几块黄金回去，然而这里的城管担心他们拿走的太多，于是要求小a和小b通过做一个游戏来决定最后得到的黄金的数量。游戏规则是这样的：假设道路长度为n米(左端点为0，右端点为n)，同时给出一个数k(下面会提到kk的用法)设小a初始时的黄金数量为A，小b初始时的黄金数量为B小a从11出发走向n−1，小b从n−1出发走向11，两人的速度均为1m/s假设某">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fzfqy8zicfj30g10k6ac9.jpg">
-<meta property="og:updated_time" content="2019-01-22T14:56:05.542Z">
+<meta property="og:updated_time" content="2019-01-22T15:44:36.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小a与黄金街道(欧拉函数)">
 <meta name="twitter:description" content="描述 小a和小b来到了一条布满了黄金的街道上。它们想要带几块黄金回去，然而这里的城管担心他们拿走的太多，于是要求小a和小b通过做一个游戏来决定最后得到的黄金的数量。游戏规则是这样的：假设道路长度为n米(左端点为0，右端点为n)，同时给出一个数k(下面会提到kk的用法)设小a初始时的黄金数量为A，小b初始时的黄金数量为B小a从11出发走向n−1，小b从n−1出发走向11，两人的速度均为1m/s假设某">
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2019-01-22 22:35:03 / 修改时间：22:56:05" itemprop="dateCreated datePublished" datetime="2019-01-22T22:35:03+08:00">2019-01-22</time>
+              <time title="创建时间：2019-01-22 22:35:03 / 修改时间：23:44:36" itemprop="dateCreated datePublished" datetime="2019-01-22T22:35:03+08:00">2019-01-22</time>
             
 
             
@@ -452,7 +452,7 @@
 
       
         <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><blockquote>
-<p>小a和小b来到了一条布满了黄金的街道上。它们想要带几块黄金回去，然而这里的城管担心他们拿走的太多，于是要求小a和小b通过做一个游戏来决定最后得到的黄金的数量。<br>游戏规则是这样的：<br>假设道路长度为n米(左端点为0，右端点为n)，同时给出一个数k(下面会提到kk的用法)<br>设小a初始时的黄金数量为A，小b初始时的黄金数量为B<br>小a从11出发走向n−1，小b从n−1出发走向11，两人的速度均为1m/s<br>假设某一时刻(必须为整数)小a的位置为x，小b的位置为y，若gcd(n,x)=1且gcd(n,y)=1，那么小a的黄金数量A会变为A∗kx(kg)，小b的黄金数量B会变为B∗ky(kg)<br>当小a到达n−1时游戏结束<br>小a想知道在游戏结束时A+B的值<br>答案对$10^9+7$取模<br><a id="more"></a></p>
+<p>小a和小b来到了一条布满了黄金的街道上。它们想要带几块黄金回去，然而这里的城管担心他们拿走的太多，于是要求小a和小b通过做一个游戏来决定最后得到的黄金的数量。<br>游戏规则是这样的：<br>假设道路长度为n米(左端点为0，右端点为n)，同时给出一个数k(下面会提到kk的用法)<br>设小a初始时的黄金数量为A，小b初始时的黄金数量为B<br>小a从11出发走向n−1，小b从n−1出发走向11，两人的速度均为1m/s<br>假设某一时刻(必须为整数)小a的位置为x，小b的位置为y，若gcd(n,x)=1且gcd(n,y)=1，那么小a的黄金数量A会变为A∗kx(kg)，小b的黄金数量B会变为B∗ky(kg)<br>当小a到达n−1时游戏结束<br>小a想知道在游戏结束时A+B的值<br>答案对10^9+7取模<br><a id="more"></a></p>
 <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><p>一行四个整数n,k,a,b</p>
 </blockquote>
 <h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
@@ -474,7 +474,7 @@
 <ul>
 <li><img src="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fzfqy8zicfj30g10k6ac9.jpg" alt=""></li>
 <li>求出1到n中与n互质的数的和sum，最后答案为$k^sum*(A+B)$</li>
-<li>sum=phi(n)*n/2,phi(i)为<a href="">欧拉函数</a>;</li>
+<li>sum=phi(n)*n/2,phi(i)为<a href="http://z-nico.cn/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%80%A7%E8%B4%A8%E3%80%81%E8%AF%81%E6%98%8E%E5%8F%8A%E6%B1%82%E6%B3%95/" target="_blank" rel="noopener">欧拉函数</a>;</li>
 <li>当sum过大时（此处不用），需要使用欧拉降幂，即sum=sum%phi(i)+phi(i);</li>
 </ul>
 </blockquote>
