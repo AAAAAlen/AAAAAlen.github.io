@@ -388,7 +388,7 @@
                 
               
 
-              <time title="创建时间：2019-01-22 22:56:48 / 修改时间：23:44:25" itemprop="dateCreated datePublished" datetime="2019-01-22T22:56:48+08:00">2019-01-22</time>
+              <time title="创建时间：2019-01-22 22:56:48 / 修改时间：23:48:11" itemprop="dateCreated datePublished" datetime="2019-01-22T22:56:48+08:00">2019-01-22</time>
             
 
             
@@ -445,41 +445,16 @@
 
       
         
-          
-            <p>φП</p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
+          <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
 <ul>
-<li>欧拉函数φ(n)表示1~n中与n互质的数的个数</li>
-<li>φ(n)=n<em>(1-1/p1)</em>(1-1/p2)<em>(1-1/p3)……;其中p1、p2、p3…为n的质因数，n为正整数 ;<br>比如x=12，其质因数为2,3。在1到12中，有1/2 的数是2的倍数，那么就有(1-1/2)的数不是2的倍数，<br>及1,3,5,7,9,11；在这些数中，有1/2的数是3的倍数，那么就有(1-1/3)的数不是3的倍数，及1,5,7,11；<br>这四个数即不是2的倍数，也不是3的倍数，故φ(12)=12</em>(1-1/2)*(1-1/3)</li>
-</ul>
-</blockquote>
-<h1 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h1><blockquote>
-<p>若当m与n互质时f(m∗n)=f(m)∗f(n),那么f是积性函数。若对任意正整数，都有f(n<em>m)=f(n)</em>f(m)成立，则f是完全积性函数。</p>
-</blockquote>
-<h1 id="欧拉函数的重要性质"><a href="#欧拉函数的重要性质" class="headerlink" title="欧拉函数的重要性质"></a>欧拉函数的重要性质</h1><blockquote>
-<ul>
-<li>对于质数p，φ(p)=p−1;</li>
-<li>若p为质数，n=p^k，则φ(n)=p^k-p^(k-1);</li>
-<li>欧拉函数是积性函数，但不是完全积性函数。若m,n互质，则φ(m<em>n)=φ(m)</em>φ(n)特殊的，当m=2，n为奇数时，φ(2*n)=φ(n);</li>
-<li>当n&gt;2时，φ(n)是偶数;</li>
-<li>小于n的数中，与n互质的数的总和为：φ(n) * n / 2 (n&gt;1);</li>
-<li>n的因数（包括1和它自己）的欧拉函数之和等于n</li>
-</ul>
-</blockquote>
-<h1 id="性质证明"><a href="#性质证明" class="headerlink" title="性质证明"></a>性质证明</h1><blockquote>
-<p><img src="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fzfs17n9fdj30uy0bajvv.jpg" alt=""></p>
-</blockquote>
-<h1 id="求法"><a href="#求法" class="headerlink" title="求法"></a>求法</h1><blockquote>
-<ul>
-<li><p>直接使用公式求一个数n的欧拉函数值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">phi</span><span class="params">(LL n)</span></span>&#123;<span class="comment">//欧拉函数 </span></span><br><span class="line">     LL i,rea=n;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">2</span>;i*i&lt;=n;i++)&#123;</span><br><span class="line">         <span class="keyword">if</span>(n%i==<span class="number">0</span>)&#123;</span><br><span class="line">             rea=rea-rea/i;          <span class="comment">//res=res*(1-(1/i))</span></span><br><span class="line">             <span class="keyword">while</span>(n%i==<span class="number">0</span>) n/=i;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">if</span>(n&gt;<span class="number">1</span>) rea=rea-rea/n;          <span class="comment">//res=res*(1-(1/n)) 最后一个质因数</span></span><br><span class="line">     <span class="keyword">return</span> rea;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用埃拉托斯特尼筛法<br>φ(n)=n<em>（1-1/p1)(1-1/p2)….(1-1/pk),其中p1、p2…pk为n的所有素因子。<br>比如：φ(12)=12</em>(1-1/2)(1-1/3)=4。<br>利用这个就比较好求了，可以用类似求素数的筛法。<br>先筛出N以内的所有素数，再以素数筛每个数的φ值。<br>比如求10以内所有数的φ值：<br>设一数组phi[11]，赋初值phi[1]=1,phi[2]=2…phi[10]=10；<br>然后从2开始循环，把2的倍数的φ值<em>(1-1/2)，则phi[2]=2</em>1/2=1,phi[4]=4<em>1/2=2,phi[6]=6</em>1/2=3….；<br>再是3，3的倍数的φ值<em>(1-1/3)，则phi[3]=3</em>2/3=2,phi[6]=3<em>2/3=2，phi[9]=…..；<br>再5，再7…因为对每个素数都进行如此操作，因此任何一个n都得到了φ(n)=n</em>（1-1/p1)(1-1/p2)….(1-1/pk)的运算</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(<span class="keyword">int</span> Max)</span></span>&#123;   </span><br><span class="line">     phi[<span class="number">1</span>]=<span class="number">1</span>;  </span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;Max;i++)  </span><br><span class="line">       phi[i]=i;  </span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;Max;i++)  </span><br><span class="line">        <span class="keyword">if</span>(phi[i]==i)  </span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;Max;j+=i)  </span><br><span class="line">              phi[j]=phi[j]/i*(i<span class="number">-1</span>);    <span class="comment">//先进行除法是为了防止中间数据的溢出   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</blockquote>
-
-          
+<li>欧拉函数φ(n)表示1~n中与n互质的数的个数
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/欧拉函数性质、证明及求法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
