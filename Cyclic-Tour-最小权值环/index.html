@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Nico&#39;s Bolg">
 <meta property="og:description" content="传送门HDU1853描述 There are N cities in our country, and M one-way roads connecting them. Now Little Tom wants to make several cyclic tours, which satisfy that, each cycle contain at least two cities, and">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T10:04:41.901Z">
+<meta property="og:updated_time" content="2019-04-07T10:41:11.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cyclic Tour(最小权值环)">
 <meta name="twitter:description" content="传送门HDU1853描述 There are N cities in our country, and M one-way roads connecting them. Now Little Tom wants to make several cyclic tours, which satisfy that, each cycle contain at least two cities, and">
@@ -385,7 +385,7 @@
                 
               
 
-              <time title="创建时间：2019-04-07 17:49:22 / 修改时间：18:04:41" itemprop="dateCreated datePublished" datetime="2019-04-07T17:49:22+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-07 17:49:22 / 修改时间：18:41:11" itemprop="dateCreated datePublished" datetime="2019-04-07T17:49:22+08:00">2019-04-07</time>
             
 
             
@@ -469,7 +469,7 @@
 </ul>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><blockquote>
 <ul>
-<li>题意：给出n个点，m条边，两个点之间可能会有多条边，在图中找出几个环，每个点仅属于一个环，每个环至少两个点，求划分后这些环的最小权值和，如果有点无法构成环，则输出-1。</li>
+<li>题意：给出n个点，m条边，两个点之间可能会有多条边，在图中找出几个环，每个点仅属于一个环，每个环至少两个点，求划分后这些环的最小权值和，如果有的点无法构成环，则输出-1。</li>
 <li>对于一个环，每个点的出度和入度都是1，把每个点的出度和入度分开，构成二分图。如果某几个点构成完美匹配，则这几个点可构成一个环。这样问题就变成了找最小权值和的完美匹配，如果没有完美匹配，则输出-1。</li>
 </ul>
 </blockquote>
