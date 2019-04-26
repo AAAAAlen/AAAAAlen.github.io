@@ -342,6 +342,503 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/最近点对/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nico's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/最近点对/" itemprop="url">
+                  最近点对
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-27 00:12:23 / 修改时间：01:13:29" itemprop="dateCreated datePublished" datetime="2019-04-27T00:12:23+08:00">2019-04-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="传送门最近对问题"><a href="#传送门最近对问题" class="headerlink" title="传送门最近对问题"></a>传送门<a href="http://acm.swust.edu.cn/?dnrgdeihvxldxlwj#/problems/794/416?_k=12a4sg" target="_blank" rel="noopener">最近对问题</a></h1><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
+<p>设p1=(x1, y1), p2=(x2, y2), …, pn=(xn, yn)是平面上n个点构成的集合S，设计算法找出集合S中距离最近的点对。</p>
+</blockquote>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
+<p>多组测试数据，第一行为测试数据组数n（0&lt;n≤100），每组测试数据由两个部分构成，第一部分为一个点的个数m（0&lt;m≤1000），紧接着是m行，每行为一个点的坐标x和y，用空格隔开，（0&lt;x，y≤100000）</p>
+</blockquote>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
+<p>每组测试数据输出一行，为该组数据最近点的距离，保留4为小数。</p>
+</blockquote>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
+<ul>
+<li>Input<br>2<br>2<br>0 0<br>0 1<br>3<br>0 0<br>1 1<br>1 0</li>
+<li>Output<br>1.0000<br>1.0000</li>
+</ul>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
+<ul>
+<li>按x排序，二分区间，找到左右子区间的最小距离d=min(d1,d2)，再在中间[mid-d,mid+d]找是否有更小的<br><img src="https://wx4.sinaimg.cn/mw690/006bDeXUgy1g2gi5wfik3j307805eq2u.jpg" alt="引用自    https://blog.csdn.net/sinat_35678407/article/details/82874216"></li>
+<li>由鸽巢定理，对于[mid-d,mid]中的某点i，在[mid,mid+d]中最多找6个点就能确定结果</li>
+<li>时间复杂度O(nlgnlgn)，中间区域按y排序O(nlgn)，这一步可以通过归并思想优化到n，总时间复杂度优化至O(nlgn)。</li>
+</ul>
+</blockquote>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e3</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">&#125;node[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmpX</span><span class="params">(Node a,Node b)</span></span>&#123;<span class="keyword">return</span> a.x&lt;b.x;&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmpY</span><span class="params">(Node a,Node b)</span></span>&#123;<span class="keyword">return</span> a.y&lt;b.y;&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Dis</span><span class="params">(Node a,Node b)</span></span>&#123;<span class="keyword">return</span> <span class="built_in">sqrt</span>((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));&#125;</span><br><span class="line"><span class="built_in">vector</span>&lt;Node&gt;tem;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">MinDis</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len=r-l+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(len==<span class="number">2</span>) <span class="keyword">return</span> Dis(node[l],node[r]);</span><br><span class="line">    <span class="keyword">if</span>(len==<span class="number">3</span>) <span class="keyword">return</span> min(Dis(node[l],node[l+<span class="number">1</span>]),Dis(node[l+<span class="number">1</span>],node[r]));</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> d=min(MinDis(l,mid),MinDis(mid+<span class="number">1</span>,r));</span><br><span class="line">    tem.clear();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=mid+<span class="number">1</span>;i&lt;=r;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node[i].x-node[mid].x&gt;d)<span class="keyword">break</span>;</span><br><span class="line">        tem.push_back(node[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=mid;i&gt;=l;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node[mid].x-node[i].x&gt;d)<span class="keyword">break</span>;</span><br><span class="line">        tem.push_back(node[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(tem.begin(),tem.end(),cmpY);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tem.size();i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;tem.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tem[j].y-tem[i].y&gt;d)<span class="keyword">break</span>;</span><br><span class="line">            d=min(d,Dis(tem[i],tem[j]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("0.in","r",stdin);</span></span><br><span class="line">    <span class="keyword">int</span> t,n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t))&#123;</span><br><span class="line">        <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;node[i].x,&amp;node[i].y);</span><br><span class="line">            sort(node+<span class="number">1</span>,node+<span class="number">1</span>+n,cmpX);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.4lf\n"</span>,MinDis(<span class="number">1</span>,n));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/凸包面积/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nico's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/凸包面积/" itemprop="url">
+                  凸包面积
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-26 22:26:26" itemprop="dateCreated datePublished" datetime="2019-04-26T22:26:26+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-27 00:09:49" itemprop="dateModified" datetime="2019-04-27T00:09:49+08:00">2019-04-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="传送门凸包面积"><a href="#传送门凸包面积" class="headerlink" title="传送门凸包面积"></a>传送门<a href="http://acm.swust.edu.cn/#/problems/249/416?_k=7bjp56" target="_blank" rel="noopener">凸包面积</a></h1><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
+<p>麦兜是个淘气的孩子。一天，他在玩钢笔的时候把墨水洒在了白色的墙上。再过一会，麦兜妈就要回来了，麦兜为了不让妈妈知道这件事情，就想用一个白色的凸多边形把墙上的墨点盖住。你能告诉麦兜最小需要面积多大的凸多边形才能把这些墨点盖住吗？ 现在，给出了这些墨点的坐标，请帮助麦兜计算出覆盖这些墨点的最小凸多边形的面积。</p>
+</blockquote>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
+<p>多组测试数据。第一行是一个整数T，表明一共有T组测试数据。<br>每组测试数据的第一行是一个正整数N(0&lt; N &lt; = 105)，表明了墨点的数量。接下来的N行每行包含了两个整数Xi和Yi（0&lt;=Xi,Yi&lt;=2000），表示每个墨点的坐标。每行的坐标间可能包含多个空格。</p>
+</blockquote>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
+<p>每行输出一组测试数据的结果，只需输出最小凸多边形的面积。面积是个实数，小数点后面保留一位即可，不需要多余的空格。</p>
+</blockquote>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
+<ul>
+<li><p>Input<br>2<br>4<br>0 0<br>1 0<br>0 1<br>1 1<br>2<br>0 0<br>0 1</p>
+</li>
+<li><p>Output<br>1.0<br>0.0</p>
+</li>
+</ul>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
+<ul>
+<li>取最左边的点x为第一个点，其他所有点根据与点x连线的斜率排序，然后依次扫过去。</li>
+<li>如下图所示，线段ab相对于xa按逆时针旋转，所以a在当前确定的凸包集合中；</li>
+<li>线段bc相对于ab按顺时针方向旋转，所以b不在当前确定的凸包集合中；</li>
+<li>判断两向量的相对旋转方向可以用叉积来计算。<strong>a</strong> x <strong>b</strong> &gt; 0 时b相对a逆时针旋转，<strong>a</strong> x <strong>b</strong> &lt; 0 时b相对a顺时针旋转<br><img src="https://wx4.sinaimg.cn/mw690/006bDeXUgy1g2gf5b5cn8j30eb09cdfs.jpg" alt=""></li>
+</ul>
+</blockquote>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x,y,k;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp; e)&#123;<span class="keyword">return</span> k&lt;e.k;&#125;</span><br><span class="line">    Node <span class="keyword">operator</span> - (Node p)&#123;<span class="keyword">return</span> (Node)&#123;x-p.x,y-p.y,<span class="number">0</span>&#125;;&#125;</span><br><span class="line">    <span class="keyword">double</span> <span class="keyword">operator</span> * (Node p)&#123;<span class="keyword">return</span> x*p.y-y*p.x;&#125;</span><br><span class="line">&#125;node[maxn];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cha</span><span class="params">(<span class="keyword">int</span> q1,<span class="keyword">int</span> q2,<span class="keyword">int</span> q3)</span></span>&#123;</span><br><span class="line">    Node a=node[q2]-node[q1];</span><br><span class="line">    Node b=node[q3]-node[q2];</span><br><span class="line">    <span class="keyword">double</span> res= a * b;</span><br><span class="line">    <span class="keyword">if</span>(res&gt;<span class="number">1e-10</span>) <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">tubao</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> minx=inf;<span class="keyword">int</span> sit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(minx&gt;node[i].x)&#123;</span><br><span class="line">            minx=node[i].x;</span><br><span class="line">            sit=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    swap(node[<span class="number">0</span>],node[sit]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node[i].x!=node[<span class="number">0</span>].x)</span><br><span class="line">            node[i].k=(node[i].y-node[<span class="number">0</span>].y)/(node[i].x-node[<span class="number">0</span>].x);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(node[i].y&gt;node[<span class="number">0</span>].y) node[i].k=inf;</span><br><span class="line">            <span class="keyword">else</span> node[i].k=-inf;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(node+<span class="number">1</span>,node+n);</span><br><span class="line">    <span class="keyword">int</span> ans[maxn],top=<span class="number">-1</span>;</span><br><span class="line">    ans[++top]=<span class="number">0</span>;ans[++top]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(cha(ans[top],i,(i+<span class="number">1</span>)%n))</span><br><span class="line">            ans[++top]=i;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">while</span>(!cha(ans[top<span class="number">-1</span>],ans[top],(i+<span class="number">1</span>)%n))&#123;</span><br><span class="line">                top--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>!=n)&#123;</span><br><span class="line">                ans[++top]=i+<span class="number">1</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> s=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;top;i++)&#123;</span><br><span class="line">        s+=<span class="number">0.5</span>*cha(<span class="number">0</span>,ans[i],ans[i+<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t))&#123;</span><br><span class="line">        <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;node[i].x,&amp;node[i].y);</span><br><span class="line">            <span class="keyword">double</span> s=tubao();</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.1lf\n"</span>,s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">10</span></span><br><span class="line"><span class="comment">11</span></span><br><span class="line"><span class="comment">1 -1</span></span><br><span class="line"><span class="comment">1 1</span></span><br><span class="line"><span class="comment">1 2</span></span><br><span class="line"><span class="comment">2 -1</span></span><br><span class="line"><span class="comment">2 0</span></span><br><span class="line"><span class="comment">2 3</span></span><br><span class="line"><span class="comment">3 -2</span></span><br><span class="line"><span class="comment">3 2</span></span><br><span class="line"><span class="comment">4 1</span></span><br><span class="line"><span class="comment">4 3</span></span><br><span class="line"><span class="comment">5 0</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">output 15.0</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/全排列康托展开/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nico's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/全排列康托展开/" itemprop="url">
+                  全排列康托展开
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-26 22:01:03 / 修改时间：22:23:11" itemprop="dateCreated datePublished" datetime="2019-04-26T22:01:03+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="传送门-排列的字典序问题"><a href="#传送门-排列的字典序问题" class="headerlink" title="传送门 排列的字典序问题"></a>传送门 <a href="http://acm.swust.edu.cn/#/problems/541/388?_k=g0tqt5" target="_blank" rel="noopener">排列的字典序问题</a></h1><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
+<p>n个元素{1,2,…, n }有n!个不同的排列。将这n!个排列按字典序排列，并编号为0，1，…，n!-1。每个排列的编号为其字典序值。例如，当n=3时，6 个不同排列的字典序值如下：<br> 0    1   2   3   4   5<br>123  132 213 231 312 321<br>任务：给定n 以及n 个元素{1,2,…, n }的一个排列，计算出这个排列的字典序值，以及按字典序排列的下一个排列。</p>
+</blockquote>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
+<p>第1 行是元素个数n(n &lt; 15)。接下来的1 行是n个元素{1,2,…, n }的一个排列。</p>
+</blockquote>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><blockquote>
+<p>第一行是字典序值，第2行是按字典序排列的下一个排列。</p>
+</blockquote>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
+<ul>
+<li>Input<br>8<br>2 6 4 5 8 1 7 3</li>
+<li>output<br>8227<br>2 6 4 5 8 3 1 7</li>
+</ul>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
+<ul>
+<li>康托展开：设某个排列{x0,x1,x2…x(n-1)}的对应键值为k，则<code>k=a[0]*(n-1)!+a[1]*(n-2)!+...+a[n-1]*0!</code>,其中a[i]表示x[i]在i~n-1中的升序位置，同时也可以得知该排列在所有排列中是第k+1个。</li>
+<li>康托逆展开：已知<strong>键值k</strong>求排列。通过上面的式子，我们令i从(n-1)到0，每次取<code>t=k/(i!)</code>，显然i后面所有式子加起来都没有i!大，故得到的t就表示这个位置应该填的数是在剩下还没有填的数的升序位置，然后用<code>k/=(i!)</code>去找下一位。</li>
+</ul>
+</blockquote>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INIT(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e2</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">LL jc[maxn];</span><br><span class="line"><span class="function">LL <span class="title">Cantor</span><span class="params">(LL *a,LL n)</span></span>&#123;</span><br><span class="line">    LL ans=<span class="number">0</span>,c=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        c=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;n;j++)</span><br><span class="line">            <span class="keyword">if</span>(a[i]&gt;a[j])c++;</span><br><span class="line">        ans+=c*jc[n<span class="number">-1</span>-i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeCantor</span><span class="params">(LL num,LL n)</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;LL&gt;cnt;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        cnt.push_back(i);</span><br><span class="line">    LL ans[maxn],tem;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tem=num/jc[i];</span><br><span class="line">        num%=jc[i];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld "</span>,cnt[tem]);</span><br><span class="line">        cnt.erase(cnt.begin()+tem);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    jc[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">15</span>;i++)jc[i]=jc[i<span class="number">-1</span>]*i;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))&#123;</span><br><span class="line">        LL a[maxn];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">        LL next=Cantor(a,n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,next);</span><br><span class="line">        DeCantor((next+<span class="number">1</span>)%jc[n],n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/二分图性质/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1471,496 +1968,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/VS2017OpenGL的配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="z-Nico">
-      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nico's Bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/VS2017OpenGL的配置/" itemprop="url">
-                  VS2017OpenGL的配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-28 19:35:57" itemprop="dateCreated datePublished" datetime="2019-03-28T19:35:57+08:00">2019-03-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-07 18:58:24" itemprop="dateModified" datetime="2019-04-07T18:58:24+08:00">2019-04-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/VS2017OpenGL的配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/系统重装后快速恢复hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="z-Nico">
-      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nico's Bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/系统重装后快速恢复hexo/" itemprop="url">
-                  系统重装后快速恢复hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-24 23:41:01" itemprop="dateCreated datePublished" datetime="2019-03-24T23:41:01+08:00">2019-03-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-07 18:58:30" itemprop="dateModified" datetime="2019-04-07T18:58:30+08:00">2019-04-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/系统重装后快速恢复hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/仓鼠找sugar-倍增LCA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="z-Nico">
-      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nico's Bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/仓鼠找sugar-倍增LCA/" itemprop="url">
-                  仓鼠找sugar(倍增LCA)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-19 16:15:07" itemprop="dateCreated datePublished" datetime="2019-03-19T16:15:07+08:00">2019-03-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-23 01:34:27" itemprop="dateModified" datetime="2019-03-23T01:34:27+08:00">2019-03-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="传送门-洛谷P3398"><a href="#传送门-洛谷P3398" class="headerlink" title="传送门 洛谷P3398"></a>传送门 <a href="https://www.luogu.org/problemnew/show/P3398" target="_blank" rel="noopener">洛谷P3398</a></h1><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>小仓鼠的和他的基（mei）友（zi）sugar住在地下洞穴中，每个节点的编号为1~n。地下洞穴是一个树形结构。这一天小仓鼠打算从从他的卧室（a）到餐厅（b），而他的基友同时要从他的卧室（c）到图书馆（d）。他们都会走最短路径。现在小仓鼠希望知道，有没有可能在某个地方，可以碰到他的基友？<br>小仓鼠那么弱，还要天天被zzq大爷虐，请你快来救救他吧！</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/仓鼠找sugar-倍增LCA/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2012,7 +2019,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">72</span>
+                    <span class="site-state-item-count">75</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2090,7 +2097,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2685,13 +2698,13 @@
   
     
       
+    
+      
+    
+      
+    
+      
         
-      
-    
-      
-    
-      
-    
       
     
       
