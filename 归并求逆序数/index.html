@@ -124,7 +124,7 @@
 <meta property="og:description" content="思路  在归并排序的同时求逆序数 区间[l,r]中，mid=(l+r)/2，i从l到mid,j从mid+1到r，当a[i]&amp;gt;a[j]的时候，a[i~mid]一定都大于a[j]，因为单独看左右区间是已经排好序的，sum+=mid-i+1即可">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/006bDeXUgy1g2obcsz15mj30kk0cz7ds.jpg">
-<meta property="og:updated_time" content="2019-05-03T10:40:04.969Z">
+<meta property="og:updated_time" content="2019-05-07T09:05:23.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="归并求逆序数">
 <meta name="twitter:description" content="思路  在归并排序的同时求逆序数 区间[l,r]中，mid=(l+r)/2，i从l到mid,j从mid+1到r，当a[i]&amp;gt;a[j]的时候，a[i~mid]一定都大于a[j]，因为单独看左右区间是已经排好序的，sum+=mid-i+1即可">
@@ -387,12 +387,24 @@
                 
               
 
-              <time title="创建时间：2019-05-03 18:31:57 / 修改时间：18:40:04" itemprop="dateCreated datePublished" datetime="2019-05-03T18:31:57+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-03 18:31:57" itemprop="dateCreated datePublished" datetime="2019-05-03T18:31:57+08:00">2019-05-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-07 17:05:23" itemprop="dateModified" datetime="2019-05-07T17:05:23+08:00">2019-05-07</time>
               
             
           </span>
@@ -437,10 +449,11 @@
 <ul>
 <li>在归并排序的同时求逆序数</li>
 <li>区间[l,r]中，mid=(l+r)/2，i从l到mid,j从mid+1到r，当a[i]&gt;a[j]的时候，a[i~mid]一定都大于a[j]，因为单独看左右区间是已经排好序的，sum+=mid-i+1即可<a id="more"></a>
-<img src="https://wx2.sinaimg.cn/mw690/006bDeXUgy1g2obcsz15mj30kk0cz7ds.jpg" alt=""><h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CLOCKS_PER_SEC ((clock_t)1000)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_CHAR=<span class="number">256</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e4</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r)<span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    MergeSort(a,l,mid);</span><br><span class="line">    MergeSort(a,mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="keyword">int</span> i=l,j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> *b=<span class="keyword">new</span> <span class="keyword">int</span>[r-l+<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j]) b[tot++]=a[i++];</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ans+=mid-i+<span class="number">1</span>;</span><br><span class="line">            b[tot++]=a[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid) b[tot++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r) b[tot++]=a[j++];</span><br><span class="line">    tot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        a[l++]=b[tot++];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a[maxn];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    MergeSort(a,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
+<p><img src="https://wx2.sinaimg.cn/mw690/006bDeXUgy1g2obcsz15mj30kk0cz7ds.jpg" alt=""></p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CLOCKS_PER_SEC ((clock_t)1000)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_CHAR=<span class="number">256</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e4</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r)<span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    MergeSort(a,l,mid);</span><br><span class="line">    MergeSort(a,mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="keyword">int</span> i=l,j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> *b=<span class="keyword">new</span> <span class="keyword">int</span>[r-l+<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j]) b[tot++]=a[i++];</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ans+=mid-i+<span class="number">1</span>;</span><br><span class="line">            b[tot++]=a[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid) b[tot++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r) b[tot++]=a[j++];</span><br><span class="line">    tot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        a[l++]=b[tot++];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a[maxn];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    MergeSort(a,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -527,6 +540,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/迷宫城堡——Tarjan/" rel="prev" title="迷宫城堡——Tarjan">
+                迷宫城堡——Tarjan <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -599,7 +616,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -695,7 +712,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
