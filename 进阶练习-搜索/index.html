@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/avatar.jpg?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="树与图的遍历，DFS，剪枝，迭代加深，BFS，双端队列BFS，优先队列BFS，A，K短路，IDA">
+<meta name="keywords" content="进阶练习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进阶练习-搜索">
+<meta property="og:url" content="https://aaaaalen.github.io/进阶练习-搜索/index.html">
+<meta property="og:site_name" content="Nico&#39;s Bolg">
+<meta property="og:description" content="树与图的遍历，DFS，剪枝，迭代加深，BFS，双端队列BFS，优先队列BFS，A，K短路，IDA">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-10T14:03:01.581Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进阶练习-搜索">
+<meta name="twitter:description" content="树与图的遍历，DFS，剪枝，迭代加深，BFS，双端队列BFS，优先队列BFS，A，K短路，IDA">
+
+
+
+
+
+
+  <link rel="canonical" href="https://aaaaalen.github.io/进阶练习-搜索/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>进阶练习-搜索 | Nico's Bolg</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   <a href="https://github.com/AAAAAlen" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nico's Bolg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/进阶练习-搜索/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nico's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">进阶练习-搜索
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-10 20:01:26 / 修改时间：22:03:01" itemprop="dateCreated datePublished" datetime="2019-08-10T20:01:26+08:00">2019-08-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/进阶练习/" itemprop="url" rel="index"><span itemprop="name">进阶练习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>树与图的遍历，DFS，剪枝，迭代加深，BFS，双端队列BFS，优先队列BFS，A<em>，K短路，IDA</em><br><a id="more"></a></p>
+<h1 id="树与图的遍历"><a href="#树与图的遍历" class="headerlink" title="树与图的遍历"></a>树与图的遍历</h1><blockquote>
+<ul>
+<li>DFS序：每个节点x的编号在序列中恰好出现两次。设这两次出现的位置为L[x]和R[x]，那么闭区间[L[x],R[x]]就以x为根的子树的DFS序。</li>
+<li>树的重心，树的深度，图的连通块划分</li>
+<li>拓扑排序：拓扑排序可以判定有向图是否存在环。如果结果序列长度小于图中点的数量，则说明某些节点未遍历，进而说明有环。</li>
+</ul>
+</blockquote>
+<h1 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h1><blockquote>
+<ul>
+<li>优化搜索顺序。在一些搜索问题中，搜索树的各个层次、各个分支建的顺序不是固定的，不同的搜索顺序会产生不同的搜索树状态，其规模大小也相差甚远。如：<a href="https://www.acwing.com/problem/content/167/" target="_blank" rel="noopener">小猫爬山</a>时按照重量递减的顺序进行搜索，<a href="https://www.acwing.com/problem/content/168/" target="_blank" rel="noopener">数独</a>问题中优先搜索“能填的合法数字”最少的位置。</li>
+<li>排除等效冗余。当我们能判定从搜索树的当前节点上沿着几天不同分支可达的子树是等效的，那么只需要对其中一条分支执行搜索。</li>
+<li>可行性剪枝。有的分支永远无法到达边界，立即执行回溯。</li>
+<li>最优性剪枝。在最优化搜索问题中，如果当前的代价已经超过了当前搜到的最优解，那么就不用继续往下搜索了，执行回溯。</li>
+<li>记忆化。可以记录每个状态的搜索结果，在重复遍历一个状态时直接检索并返回。</li>
+</ul>
+</blockquote>
+<h1 id="迭代加深"><a href="#迭代加深" class="headerlink" title="迭代加深"></a>迭代加深</h1><blockquote>
+<ul>
+<li>DFS每次选定一个分支，不断深入，直到递归边界才回溯。当一颗搜索树的分支数目非常多，并且答案再某个较浅的节点上，如果在一开始就选错了分支，就很有可能在不包含答案的深子树上浪费很多时间。</li>
+<li>我们可以从小到大限制搜索的深度，如果在当前深度限制下搜不到答案就把深度增加，重新进行一次搜索。虽然在深度限制为d时，会重复搜索第1~d-1层节点，但是当搜索树节点分支数目较多是，随着层数的增加，每层节点数就会呈指数级增长，这些重复搜索与深层子树的规模相比就不值一提了。</li>
+<li>当<strong>搜索树随着层次的深入增长很快，并且我们能够确保答案再一个较浅层次的节点时</strong>，就可以采用迭代加深的方法来解决问题。甚至有的题目描述包含“如果10步内搜不到就算无解”的字样。</li>
+<li>除了迭代加深外，<strong>双向搜索</strong>也可以避免在深层子树上浪费时间。有的题目不但有“初态”，还有明确的“终态”，并且从两个状态开始搜索产生的搜索树都能覆盖整个状态空间。这种情况下就可以双向搜索——从初态和终态出发各搜索一半，产生两个深度减半的搜索树，在中间交会、组合成最终的答案。</li>
+</ul>
+</blockquote>
+<h1 id="BFS-每一步扩展花费代价为1"><a href="#BFS-每一步扩展花费代价为1" class="headerlink" title="BFS(每一步扩展花费代价为1)"></a>BFS(每一步扩展花费代价为1)</h1><blockquote>
+<ul>
+<li>BFS逐层遍历搜索树，所有状态按照入队的先后顺序具有<strong>层次单调性</strong>。如果每一次扩展花费代价为1，那么当一个状态第一次被访问时，就得到了从起始状态到该状态的最小步数。</li>
+<li>值得一提的是，BFS队列中的元素关于层次满足<strong>两段性</strong>和<strong>单调性</strong>，两段性就是在任意时刻，队列中至多有两个层次的节点；在访问完所有的i层节点后才会访问第i+1层节点。</li>
+</ul>
+</blockquote>
+<h1 id="双端队列BFS（每一步扩展花费代价只有0和1两种情况）"><a href="#双端队列BFS（每一步扩展花费代价只有0和1两种情况）" class="headerlink" title="双端队列BFS（每一步扩展花费代价只有0和1两种情况）"></a>双端队列BFS（每一步扩展花费代价只有0和1两种情况）</h1><blockquote>
+<ul>
+<li>如果每一步扩展花费代价要么是0，要么是1，我们就可以用双端队列在手动控制BFS的两段性和单调性。每个节点虽然可能被更新（入队）多次，但是它第一次被扩展出来时，就能得到对应的最优解，之后再被取出可直接忽略。</li>
+</ul>
+</blockquote>
+<h1 id="优先队列BFS（每一步扩展都有各自不同的代价）"><a href="#优先队列BFS（每一步扩展都有各自不同的代价）" class="headerlink" title="优先队列BFS（每一步扩展都有各自不同的代价）"></a>优先队列BFS（每一步扩展都有各自不同的代价）</h1><blockquote>
+<ul>
+<li>法1：仍然使用一般的队列，这时我们不能保证每个状态第一次入队就能得到最小代价，所有只能允许一个状态被多次更新、多次进出队列，不断搜索，直到队列为空，最后记录数组中保存了最小代价。复杂度一般会达到O(n^2)，如最短路的SPFA算法。</li>
+<li>法2：改用优先队列进行BFS。每次从队列中取出当前代价最小的状态进行扩展（该状态一定是最优的，因为其他状态的代价都不小于它，所以之后就不可能再更新它了）。虽然这样每个状态也会被多次更新、多次进入队列，一个状态也可能以不同的代价在队列中同时出现，但是每个状态第一次出队就是最优解，后面再出队就可以直接忽略。所以每个状态只扩展一次，时间复杂度为O(nlgn)，如对优化的Dijkstra。</li>
+<li>优先队列BFS的缺点就是不跑有<strong>负边</strong>的图。因为每次找出代价最小的状态时，因为负边的存在，不能保证此时它就是最优解，这时就只能用一般的队列搜索完整个解空间了。</li>
+</ul>
+</blockquote>
+<h1 id="双向BFS"><a href="#双向BFS" class="headerlink" title="双向BFS"></a>双向BFS</h1><blockquote>
+<ul>
+<li>同之前的双向DFS，从初态和终态同时扩展，最小交会代价和就是答案。</li>
+</ul>
+</blockquote>
+<h1 id="A-估价函数-优先队列-BFS"><a href="#A-估价函数-优先队列-BFS" class="headerlink" title="A*(估价函数+优先队列+BFS)"></a>A*(估价函数+优先队列+BFS)</h1><blockquote>
+<ul>
+<li>在优先队列BFS中，我们不断从堆中取出“当前最小代价”的状态进行扩展，如果<strong>给出一个目标状态</strong> ，要求从初态到目标状态的最小代价，上述“优先策略”明显不完整。一个状态的当前代价最小，但在未来搜索中，可能当前状态到目标状态代价很大。</li>
+<li>我们设计一个“估价函数”，以任意状态为输入，计算出从该状态到目标状态所需要的估计值。在搜索中，仍然维护一个堆，每次从堆中取出“当前代价+未来估价”最小的状态进行扩展。</li>
+<li>设估价值为f(x)，当前状态到目标状态的实际值为g(x)，必须保证f(x) &lt;= g(x)。具体证明P124。</li>
+</ul>
+</blockquote>
+<h1 id="K短路"><a href="#K短路" class="headerlink" title="K短路"></a>K短路</h1><blockquote>
+<ul>
+<li>使用优先队列bfs时，第一次取出x点的状态就是从起点到x点的最优解，即最短路，同理，在第k次取出x时就是x的第k优解，即k短路。</li>
+<li>上诉方法虽然可行，但是最坏情况下时间复杂度为<code>O(K*(N+N)*log(N+M))</code>，使用A*提高搜索效率。</li>
+<li>在第K短路中从x到T的估计距离f(x)应该不大于第K短路中x到T的实际距离g(x)，所以把估价函数f(x)定义为x到t的最短路。</li>
+<li>步骤：<ul>
+<li>dijkstra预处理出各个节点到t的最短路长度f(x)。</li>
+<li>bfs时优先队列维护二元组(x,dist+f(x))，dist表示从s到x当前走过第距离，起初对重只有(s,0+f(s)).</li>
+<li>取出dist+f(x)最小的x，向外扩展。如果节点y被取出的次数未达到k，就直接把新的二元组(y,dist+w(x,y)+f(y))放入优先队列。</li>
+<li>重复2~3步，直到终点取出k次，返回答案。</li>
+</ul>
+</li>
+<li>使用A*前后虽然时间复杂度上限相同，但是由于估价函数的作用，图中很多节点访问次数远小于K。</li>
+</ul>
+</blockquote>
+<h1 id="IDA-（迭代深搜-估价函数）"><a href="#IDA-（迭代深搜-估价函数）" class="headerlink" title="IDA*（迭代深搜+估价函数）"></a>IDA*（迭代深搜+估价函数）</h1><blockquote>
+<ul>
+<li>若当前深度+未来估计步数&gt;深度限制，立即返回。</li>
+<li>同样需要遵守f(x) &lt;= g(x)的准则。</li>
+<li>只要f(x)够优秀，这个算法贼快。</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="z-Nico 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="z-Nico 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>z-Nico</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://aaaaalen.github.io/进阶练习-搜索/" title="进阶练习-搜索">https://aaaaalen.github.io/进阶练习-搜索/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/进阶练习/" rel="tag"># 进阶练习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/进阶练习-基本数据结构/" rel="next" title="进阶训练-基本数据结构">
+                <i class="fa fa-chevron-left"></i> 进阶训练-基本数据结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="z-Nico" />
+            
+              <p class="site-author-name" itemprop="name">z-Nico</p>
+              <p class="site-description motion-element" itemprop="description">三旬尚远浓烟散，一如年少迟夏归</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">111</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/AAAAAlen" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:443217070@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/Jork.Dali" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/acdalao" title="MyCSDN" target="_blank">MyCSDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://x-armin.com//" title="Armin" target="_blank">Armin</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://y-angora.com/" title="Angora" target="_blank">Angora</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://l-lckhy.com/" title="ConanMoke" target="_blank">ConanMoke</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#树与图的遍历"><span class="nav-number">1.</span> <span class="nav-text">树与图的遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪枝"><span class="nav-number">2.</span> <span class="nav-text">剪枝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迭代加深"><span class="nav-number">3.</span> <span class="nav-text">迭代加深</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS-每一步扩展花费代价为1"><span class="nav-number">4.</span> <span class="nav-text">BFS(每一步扩展花费代价为1)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双端队列BFS（每一步扩展花费代价只有0和1两种情况）"><span class="nav-number">5.</span> <span class="nav-text">双端队列BFS（每一步扩展花费代价只有0和1两种情况）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优先队列BFS（每一步扩展都有各自不同的代价）"><span class="nav-number">6.</span> <span class="nav-text">优先队列BFS（每一步扩展都有各自不同的代价）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双向BFS"><span class="nav-number">7.</span> <span class="nav-text">双向BFS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-估价函数-优先队列-BFS"><span class="nav-number">8.</span> <span class="nav-text">A*(估价函数+优先队列+BFS)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K短路"><span class="nav-number">9.</span> <span class="nav-text">K短路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDA-（迭代深搜-估价函数）"><span class="nav-number">10.</span> <span class="nav-text">IDA*（迭代深搜+估价函数）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">z-Nico</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
