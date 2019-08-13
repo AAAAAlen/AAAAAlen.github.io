@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Nico&#39;s Bolg">
 <meta property="og:description" content="&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-13T05:22:14.156Z">
+<meta property="og:updated_time" content="2019-08-13T18:18:12.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进阶训练-数论">
 <meta name="twitter:description" content="&amp;gt;">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-13 13:22:14" itemprop="dateModified" datetime="2019-08-13T13:22:14+08:00">2019-08-13</time>
+                <time title="修改时间：2019-08-14 02:18:12" itemprop="dateModified" datetime="2019-08-14T02:18:12+08:00">2019-08-14</time>
               
             
           </span>
@@ -502,9 +502,10 @@
 <li>扩展欧几里得：对于任意整数a,b，存在一对整数x,y，满足ax+by=gcd(a,b)。<ul>
 <li>当b=0时，显然有一对整数x=1，y=0，使得<code>a*1+0*0=gcd(a,0)</code>;</li>
 <li>当b&gt;0,则gcd(a,b)=gcd(b,a mod b)。假设存在一对整数x,y，满足<code>b*x+(a mod b)*y=gcd(b,a mod b)</code>，因为<code>bx+(a mod b)y=bx+(a-b(a/b))y=ay+b(x-(a/b)y)</code>，所以令x’=y,y’=x-(a/b)y，就得到了ax’+by’=gcd(a,b)。</li>
-<li>对于更为一般的方程ax+by=c，它有解<strong>当且仅当d|c</strong>。我们先求出ax+by=d的一组特解x0,y0，然后同时乘上c/d，就得到了ax+by=c的一组特解(c/d)x0,(c/d)y0。<br>事实上，方程ax+by=c的通解可以表示为x=(c/d)x0+k(b/d),y=(c/d)y0-k(a/d) (k∈Z)。<br>其中k取遍整个整数集合，d=gcd(a,b)，x0,y0是ax+by=gcd(a,b)的一组特解。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">exgcd</span><span class="params">(LL a,LL b,LL &amp;x,LL &amp;y)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;x=<span class="number">1</span>,y=<span class="number">0</span>;<span class="keyword">return</span> a;&#125;</span><br><span class="line">    LL d=exgcd(b,a%b,x,y);</span><br><span class="line">    ll z=x;x=y;y=z-y*(a/b);</span><br><span class="line">    <span class="keyword">return</span> d; <span class="comment">//返回值为gcd(a,b)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>对于更为一般的方程ax+by=c，它有解<strong>当且仅当d|c</strong>。我们先求出ax+by=d的一组特解x0,y0，然后同时乘上c/d，就得到了ax+by=c的一组特解(c/d)x0,(c/d)y0。<br>事实上，方程ax+by=c的通解可以表示为x=(c/d)x0+k(b/d),y=(c/d)y0-k(a/d) (k∈Z)。<br>其中k取遍整个整数集合，d=gcd(a,b)，x0,y0是ax+by=gcd(a,b)的一组特解。</li>
 </ul>
+</li>
+<li>中国剩余定理：对于形如x≡ai(mod mi)的方程组，x=∑aiMiti，其中Mi为除mi外所有模数的倍数，ti是线性同余方程Miti≡1(mod mi)的一个解。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">exgcd</span><span class="params">(LL a,LL b,LL &amp;x,LL &amp;y)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;x=<span class="number">1</span>,y=<span class="number">0</span>;<span class="keyword">return</span> a;&#125;</span><br><span class="line">    LL d=exgcd(b,a%b,x,y);</span><br><span class="line">    ll z=x;x=y;y=z-y*(a/b);</span><br><span class="line">    <span class="keyword">return</span> d; <span class="comment">//返回值为gcd(a,b)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
@@ -512,10 +513,10 @@
 </ul>
 <ul>
 <li><strong>线性同余方程</strong><ul>
-<li>给定整数a,b,m，求一个整数x满足a*x≡b(mod m)，或者给出无解。<ul>
-<li>a<em>x≡b(mod m)等价于求`a</em>x-b<code>是m的倍数，不妨设为-y倍。于是该方程可改写为</code>a<em>x-b=-y</em>m<code>，即</code>a<em>x+m</em>y=b`，可以用扩欧求解。</li>
+<li>给定整数a,b,m，求一个整数x满足ax≡b(mod m)，或者给出无解。<ul>
+<li>ax≡b(mod m)等价于求<code>a·x-b</code>是m的倍数，不妨设为-y倍。于是该方程可改写为<code>a·x-b=-y·m</code>，即<code>a·x+m·y=b</code>，可以用扩欧求解。</li>
 <li>此线性同余方程有解当且仅当gcd(a,m)|b。</li>
-<li>在有解时，用扩欧求出一组整数x0,y0，满足<code>a*x0+m*y0=gcd(a,m)</code>，然后x=x0*b/gcd(a,m)就是原线性同余方程的一个解。</li>
+<li>在有解时，用扩欧求出一组整数x0,y0，满足<code>a·x0+m·y0=gcd(a,m)</code>，然后x=x0*b/gcd(a,m)就是原线性同余方程的一个解。</li>
 <li>方程的通解是所有模m/gcd(a,m)与x同余的整数。</li>
 <li><a href="https://www.acwing.com/activity/content/code/content/89033/" target="_blank" rel="noopener">例题：同余方程</a></li>
 </ul>
@@ -560,9 +561,76 @@
 <li>显然，ai进行插入操作后，要么进入线性基，要么被异或为0，说明已经可以被基中向量张成。证明：x1^x2…^xm=ai =&gt; x1^x2^…^xm^ai=0。</li>
 <li>得到线性基后，假如线性基大小为t，那么我们可以用这些元素张成出2^t个<strong>去重异或集合</strong>，这个集合也是原异或空间选择任意个向量能张成出的最大集合（不包括0）。此外，<strong>不去重异或集合中，每个数出现2^(n-t)次</strong>。其中，<strong>最大的异或和就是将线性基中所有位都异或起来得到的结果</strong>，而最小的异或和就是线性基中的最后一个非零元素或0。<br><strong>当t &lt; n时异或空间可异或出0</strong>。</li>
 <li>异或和第k小：若异或空间可异或出0，那么我们要求低k-1小的元素，因为线性基无法张成0。我们把k-1进行二进制分解，如果k-1的第j位等于1，就选取x[t-j]，最后选出的x异或起来就得到了答案。特别的，若k&gt;2^t，则无解。</li>
-<li><a href="">例题</a></li>
+<li><a href="http://z-nico.cn/%E7%BA%BF%E6%80%A7%E5%9F%BA%E4%BE%8B%E9%A2%98/" target="_blank" rel="noopener">例题</a></li>
 </ul>
 </li>
+</ul>
+</blockquote>
+<h1 id="组合数"><a href="#组合数" class="headerlink" title="组合数"></a>组合数</h1><blockquote>
+<ul>
+<li>求法：<ul>
+<li>利用C(n,m)=C(n-1,m)+C(n-1,m-1)的性质可以递推求出0&lt;=y&lt;=x&lt;=n的所有组合数C(x,y)，复杂度为O(N^2);</li>
+<li>组合数结果一般较大，如果题目要求出C(n,m)对一个数p取模后的值，并且1~n都存在模p的乘法逆元，则可以先计算n! mod p，再计算分母m!(n-m)! mod p的逆元，乘起来得到C(n,m) mod p，复杂度为O(n);</li>
+<li>若在计算阶乘过程在把0&lt;=k&lt;=n的每个k! mod p及逆元分别保存在两个数组jc和jc_inv中，则可在O(nlgn)的预处理后，以O(1)的时间回到0&lt;=y&lt;=x&lt;=n的所有组合数<code>C(x,y) mod p=jc[x]·jc_inv[y]·jc_inv[x-y] mod p</code>。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>二项式定理：<code>(ax+by)^n=(k=0-&gt;n)∑C(n,k)·a^k·b^(n-k)·x^k·y^(n-k)</code></li>
+<li>多重集的排列数：多重集是的包含重复元素的广义集合。设S={n1·a1,n2·a2,…,nk·ak}是由n1个a1,n2个a2…nk个ak组成的多重集。S的全排列个数为：n!/(n1!·n2!·n3!·…·nk!)。</li>
+<li>多重集的组合数：设<strong>r&lt;=min(ni)(i∈[1,k])</strong>，从S中取出r个元素组成一个多重集（不考虑元素的顺序），产生的不同多重集的数量为：C(k+r-1,k-1)</li>
+<li>卢卡斯定理:对任意正整数1&lt;=m&lt;=n，有<code>C(n,m)≡C(n mod p,m mod p) · C(n/p,m/p) (mod p)</code>。即将n和m表示为p进制数，对p进制下的每一位分别计算组合数，最后再乘起来。</li>
+</ul>
+<ul>
+<li>卡特兰数：给定n个0和n个1，它们按照某种顺序排成长度为2n的序列，满足任意前缀中0的个数都不少于1的个数的序列的数量为：<code>Catn=C(2n,n)/(n+1)</code>。以下问题都与Catalan数有关：<ul>
+<li>n个左括号和n个右括号组成的合法括号序列的数量为Catn</li>
+<li>1,2,..,n经过一个栈，形成的合法出栈序列的数量为Catn</li>
+<li>n个节点构成的不同二叉树的数量为Catn</li>
+<li>在平面直角坐标系上，每一步只能向上或向右走，从(0,0)走到(n,n)并且出两个端点外不接触直线y=x的路线数量为2Cat(n-1)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><blockquote>
+<ul>
+<li>设S1,S2,S3…Sn为有限集合，|S|表示集合S的大小，则：|∪Si|=∑|Si|-∑|Si ∩ Sj|+∑|Si ∩ Sj ∩ Sk|-∑|Si ∩ Sj ∩ Sk ∩Sl|+…+(-1)^(n+1)|S1 ∩ S2 ∩…∩ Sn|。</li>
+<li>多重集的组合数:设S={n1·a1,n2·a2,…,nk·ak}。设n=∑ni，对于任意整数r&lt;=n，从S中取出r个元素组成一个多重集（不考虑顺序），产生的不同多重集的数量为：<code>C(k+r+1,k-1)-∑C(k+r-ni-2,k-1)+∑C(k+r-ni-nj-3,k-1)-...+(-1)^k·C(k+r-∑ni-（k+1）,k-1)</code></li>
+<li><a href="https://www.acwing.com/problem/content/216/" target="_blank" rel="noopener">Devu与鲜花</a>:Devu有N个盒子，第i个盒子中有Ai枝花。同一个盒子内的花颜色相同，不同盒子内的花颜色不同。Devu要从这些盒子中选出M枝花组成一束，求共有多少种方案。若两束花每种颜色的花的数量都相同，则认为这两束花是相同的方案。结果需对109+7取模之后方可输出。此题等价于多重集S中选出M个原色能产生的不同多重集的数量。</li>
+</ul>
+</blockquote>
+<h1 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h1><blockquote>
+<ul>
+<li>将N分解质因数N=p1^c1·p2^c2·p3^c3…pm^cm。当N包含相等的质因子时，μ(N)=0；当N的所有质因子各不相同时，若N有偶数个质因子，μ(N)=1，若N有奇数个质因子，μ(N)=-1。</li>
+<li>若只求一项莫比乌斯函数，则分解质因数即可计算。若求1~N的每一项莫比乌斯函数，可以用埃拉托斯特尼筛法计算：把所有μ值初始化为1。接下来，对于筛出的每个质数p，令μ(p)=-1，并扫描p的倍数x=2p,3p,…(n/p)·p，检查x能否被p^2整除。若能，则令μ(x)=0，否则令μ(x)=-μ(x)。</li>
+<li>莫比乌斯反演：若g(x)=∑f(d),其中x|d，则f(x)=∑μ(d/x)*g(d)，其中x|d<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) miu[i]=<span class="number">1</span>,v[i]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(v[i]) <span class="keyword">continue</span>;</span><br><span class="line">    miu[i]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>*i;j&lt;=n;j+=i)&#123;</span><br><span class="line">        v[j]=i;</span><br><span class="line">        <span class="keyword">if</span>((j/i)%i==<span class="number">0</span>) miu[j]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> miu[j]*=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h1 id="概率与数学期望"><a href="#概率与数学期望" class="headerlink" title="概率与数学期望"></a>概率与数学期望</h1><blockquote>
+<ul>
+<li>性质：数学期望是线性函数，满足<code>E(aX+bY)=a*E(X)+b*E(Y)</code>。此性质非常重要，是我们能都对数学期望进行递推求解的基本依据。如：掷一个骰子的期望E(x)=(1+2+3+4+5+6)/6=3.5。掷两个骰子的点数可以表示为随机变量2X，于是E(2x)=2E(x)=7;</li>
+</ul>
+</blockquote>
+<h1 id="概率论与SG函数"><a href="#概率论与SG函数" class="headerlink" title="概率论与SG函数"></a>概率论与SG函数</h1><blockquote>
+<ul>
+<li>NIM博弈：给定n堆物品，第i堆中有Ai个物品，两名玩家轮流行动，每次从某一堆中取走若干个物品，可以全拿，但是不能不拿。拿走最后一件物品者获胜，两人取最优策略，问能否先手必胜。<ul>
+<li>先手必胜，当且仅当A1 xor A2 xor A3… xor An 不为0。</li>
+<li>证明：如果A1 xor A2 xor…xor An=x!=0，设x的二进制位表示下最高位的1在第k位，那么至少存在一堆石子Ai，它的第k位是1。显然Ai xor x &lt; Ai,从Ai中拿走一部分石子，使得Ai=Ai xor x，就得到了一个各堆石子数异或和为0的局面。对于任意一个石子数异或和为0的局面，无论怎么拿，异或和都不等于0，即必败。</li>
+</ul>
+</li>
+<li>公平组合游戏ICG：若一个游戏满足一下条件则称其为公平组合游戏。NIM博弈属于公平组合游戏。<ul>
+<li>由两名玩家交替行动</li>
+<li>在游戏进程的任意时刻，可以执行的合法行动与轮到哪名玩家无关</li>
+<li>不能行动的玩家判负</li>
+</ul>
+</li>
+<li>有向图游戏：给定一个有向无环图，图中有唯一起点，在起点上放一枚棋子。两名玩家交替地把这枚棋子沿着有向边进行移动，每次可以移动一步，无法移动者负。任何一个公平组合游戏都可以转化为有向图游戏。具体方法：把每个局面看成图中的一个节点，并且每个局面沿着合法行动能到达的下一个局面连有向边。</li>
+<li>Mex运算：设S表示一个非负整数集合。定义mex(S)为求出<strong>不属于集合S的最小非负整数</strong>的运算。</li>
+<li>SG函数：在有向图游戏中，对于每个节点x，设从x出发共k条有向边，分别到达节点y1,y2,y3…yk，定义SG(x)为x的后继节点y1,y2…yk的SG函数值构成的集合再执行mex运算的结果，即：<code>SG(x)=mex({SG(y1),SG(y2)...SG(yk)})</code>。整个有向图G的SG函数值被定义为有向图游戏起点s的SG函数值，即SG(G)=SG(s)。</li>
+</ul>
+<ul>
+<li>有向图游戏的和：设G1,G2…Gm是m个有向图游戏。定义有向图游戏G，它的行动规则是任选某个有向图游戏Gi，并在Gi上行动一步。G被称为有向图游戏G1,G2,G3…Gn的和。有向图游戏的和的SG函数值等于它包含的各个字游戏SG函数值得异或和，即：<code>SG(G)=SG(G1) xor SG(G2)...xor SG(Gm)</code>。</li>
+<li><a href="https://www.acwing.com/problem/content/221/" target="_blank" rel="noopener">例题：剪纸游戏</a></li>
 </ul>
 </blockquote>
 
@@ -926,7 +994,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#质数"><span class="nav-number">1.</span> <span class="nav-text">质数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#约数"><span class="nav-number">2.</span> <span class="nav-text">约数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#欧拉函数"><span class="nav-number">3.</span> <span class="nav-text">欧拉函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同余"><span class="nav-number">4.</span> <span class="nav-text">同余</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵快速幂"><span class="nav-number">5.</span> <span class="nav-text">矩阵快速幂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高斯消元"><span class="nav-number">6.</span> <span class="nav-text">高斯消元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性空间"><span class="nav-number">7.</span> <span class="nav-text">线性空间</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#质数"><span class="nav-number">1.</span> <span class="nav-text">质数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#约数"><span class="nav-number">2.</span> <span class="nav-text">约数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#欧拉函数"><span class="nav-number">3.</span> <span class="nav-text">欧拉函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同余"><span class="nav-number">4.</span> <span class="nav-text">同余</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵快速幂"><span class="nav-number">5.</span> <span class="nav-text">矩阵快速幂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高斯消元"><span class="nav-number">6.</span> <span class="nav-text">高斯消元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性空间"><span class="nav-number">7.</span> <span class="nav-text">线性空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组合数"><span class="nav-number">8.</span> <span class="nav-text">组合数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容斥原理"><span class="nav-number">9.</span> <span class="nav-text">容斥原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">10.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率与数学期望"><span class="nav-number">11.</span> <span class="nav-text">概率与数学期望</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率论与SG函数"><span class="nav-number">12.</span> <span class="nav-text">概率论与SG函数</span></a></li></ol></div>
             
 
           </div>
