@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Nico&#39;s Bolg">
 <meta property="og:description" content="最小点覆盖=最大匹配 最小边覆盖=v-最大匹配=最大独立集">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-07T09:52:58.374Z">
+<meta property="og:updated_time" content="2019-09-26T13:46:42.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分图性质">
 <meta name="twitter:description" content="最小点覆盖=最大匹配 最小边覆盖=v-最大匹配=最大独立集">
@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-07 17:52:58" itemprop="dateModified" datetime="2019-05-07T17:52:58+08:00">2019-05-07</time>
+                <time title="修改时间：2019-09-26 21:46:42" itemprop="dateModified" datetime="2019-09-26T21:46:42+08:00">2019-09-26</time>
               
             
           </span>
@@ -538,6 +538,56 @@
 <li>无向图G为二分图的充分必要条件是，G至少有两个顶点,且其所有回路的长度均为偶数。</li>
 <li>判断二分图的常见方法是染色法： 开始对任意一未染色的顶点染色，之后判断其相邻的顶点中，若未染色则将其染上和相邻顶点不同的颜色， 若已经染色且颜色和相邻顶点的颜色相同则说明不是二分图，若颜色不同则继续判断，bfs和dfs可以搞定！</li>
 <li>易知：任何无回路的的图均是二分图。</li>
+</ul>
+</blockquote>
+<h1 id="二分图的应用模型"><a href="#二分图的应用模型" class="headerlink" title="二分图的应用模型"></a>二分图的应用模型</h1><blockquote>
+<ul>
+<li>二分图的最大匹配：<ul>
+<li><strong>0要素：左右每个集合中包含0条边</strong></li>
+<li><strong>1要素：每个点只能被一个匹配覆盖</strong></li>
+</ul>
+</li>
+<li>二分图的最小点覆盖：<ul>
+<li>选出最少的点组成集合，使所有的边都至少有一个端点在集合中</li>
+<li><strong>2要素：每条边有两个端点，至少选择一个端点</strong></li>
+<li>最小点覆盖数等于最大匹配数</li>
+</ul>
+</li>
+<li>二分图最大独立集：<ul>
+<li>在任意两点之间都没有边相连的情况下选出最多的点</li>
+<li>最大独立集=n-最大匹配</li>
+</ul>
+</li>
+<li>二分图最大团：<ul>
+<li>任意两点之间都有一条边相连的情况下选出最多的点</li>
+<li><strong>二分图G的最大团等于其补图G’的最大独立集</strong>。</li>
+<li>补图转化思想极为重要，在一些题中能称为解答的突破口</li>
+</ul>
+</li>
+<li>DAG最小路径点覆盖：<ul>
+<li>用最少的<strong>不相交</strong>的简单路径覆盖所有的点（即每个点只能被覆盖一次）</li>
+<li>建一张新图，1~n节点作为二分图左部点，n+1~2n作为右部点，对原图每条边(x,y)，从x到y+n连一条边。</li>
+<li>最小路径点覆盖=n-新图最大匹配数</li>
+</ul>
+</li>
+<li>DAG最小路径可重复点覆盖：<ul>
+<li>用最少的<strong>可相交</strong>的简单路径覆盖所有的点（即每个点可被覆盖多次）</li>
+<li>也可用于解决：在DAG中，求出最多的点数，满足点之间两两不连通</li>
+<li>先对DAG传递闭包，然后求最小路径点覆盖。</li>
+</ul>
+</li>
+<li>二分图最大匹配的必经边和可行边：<ul>
+<li>给二分图添加源点与左部所有节点相连，汇点与右部所有节点相连，每条无向边拆成两条有向边。</li>
+<li>先用最大流找出任意一组最大匹配，此时：<ul>
+<li><strong>必经边</strong>:(x,y)的流量为1，并且在残量网络上属于<strong>不同</strong>的强连通分量</li>
+<li><strong>可行边</strong>：(x,y)的流量为1，或者在残量网络上属于<strong>不同</strong>的强连通分量<ul>
+<li>dinic求最大流，tarjan求强连通分量，最后对边逐一进行判定，时间复杂度为O(E*sqrt(N+M))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </blockquote>
 
@@ -895,7 +945,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点覆盖、最小点覆盖"><span class="nav-number">1.</span> <span class="nav-text">点覆盖、最小点覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边覆盖、极小边覆盖"><span class="nav-number">2.</span> <span class="nav-text">边覆盖、极小边覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#独立集、极大独立集"><span class="nav-number">3.</span> <span class="nav-text">独立集、极大独立集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#团"><span class="nav-number">4.</span> <span class="nav-text">团</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边独立集、极大边独立集"><span class="nav-number">5.</span> <span class="nav-text">边独立集、极大边独立集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支配集、极小支配集"><span class="nav-number">6.</span> <span class="nav-text">支配集、极小支配集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边支配集、极小边支配集"><span class="nav-number">7.</span> <span class="nav-text">边支配集、极小边支配集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最小路径覆盖"><span class="nav-number">8.</span> <span class="nav-text">最小路径覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配"><span class="nav-number">9.</span> <span class="nav-text">匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图的性质"><span class="nav-number">10.</span> <span class="nav-text">二分图的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图的判定"><span class="nav-number">11.</span> <span class="nav-text">二分图的判定</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点覆盖、最小点覆盖"><span class="nav-number">1.</span> <span class="nav-text">点覆盖、最小点覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边覆盖、极小边覆盖"><span class="nav-number">2.</span> <span class="nav-text">边覆盖、极小边覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#独立集、极大独立集"><span class="nav-number">3.</span> <span class="nav-text">独立集、极大独立集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#团"><span class="nav-number">4.</span> <span class="nav-text">团</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边独立集、极大边独立集"><span class="nav-number">5.</span> <span class="nav-text">边独立集、极大边独立集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支配集、极小支配集"><span class="nav-number">6.</span> <span class="nav-text">支配集、极小支配集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边支配集、极小边支配集"><span class="nav-number">7.</span> <span class="nav-text">边支配集、极小边支配集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最小路径覆盖"><span class="nav-number">8.</span> <span class="nav-text">最小路径覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配"><span class="nav-number">9.</span> <span class="nav-text">匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图的性质"><span class="nav-number">10.</span> <span class="nav-text">二分图的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图的判定"><span class="nav-number">11.</span> <span class="nav-text">二分图的判定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图的应用模型"><span class="nav-number">12.</span> <span class="nav-text">二分图的应用模型</span></a></li></ol></div>
             
 
           </div>
