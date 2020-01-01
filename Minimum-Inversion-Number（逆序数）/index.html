@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Nico&#39;s Bolg">
 <meta property="og:description" content="传送门HDU - 1394描述 The inversion number of a given number sequence a1, a2, …, an is the number of pairs (ai, aj) that satisfy i &amp;lt; j and ai &amp;gt; aj.For a given sequence of numbers a1, a2, …, an, if we">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-03T10:31:15.194Z">
+<meta property="og:updated_time" content="2019-12-29T10:04:53.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Minimum Inversion Number（逆序数）">
 <meta name="twitter:description" content="传送门HDU - 1394描述 The inversion number of a given number sequence a1, a2, …, an is the number of pairs (ai, aj) that satisfy i &amp;lt; j and ai &amp;gt; aj.For a given sequence of numbers a1, a2, …, an, if we">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-03 18:31:15" itemprop="dateModified" datetime="2019-05-03T18:31:15+08:00">2019-05-03</time>
+                <time title="修改时间：2019-12-29 18:04:53" itemprop="dateModified" datetime="2019-12-29T18:04:53+08:00">2019-12-29</time>
               
             
           </span>
@@ -479,7 +479,7 @@
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
 <ul>
 <li>题意：给n个数，范围是0~n-1，并且每个数出现一次，每次可以将第一个数移到最后，求最大的逆序数（前面比他大的数的个数）之和</li>
-<li>将a[i]填入对应位置，然后求1到a[i]中已经出现的数(这些数都小于等于a[i])的个数p，则a[i]的逆序数为i-p。当然这种方法的空间占用为max(a[i])，最好还是先离散化：<a href="http://z-nico.cn/Ultra-QuickSort-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E6%95%B0/" target="_blank" rel="noopener">逆序数求法</a>，然后求出初始的逆序数和sum。</li>
+<li>将a[i]填入对应位置，然后求1到a[i]中已经出现的数(这些数都小于等于a[i])的个数p，则a[i]的逆序数为i-p。当然这种方法的空间占用为max(a[i])，最好还是先离散化：<a href="http://bamboo-rat.cn/Ultra-QuickSort-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E6%95%B0/" target="_blank" rel="noopener">逆序数求法</a>，然后求出初始的逆序数和sum。</li>
 <li>，因为每个数的范围是0~n-1且只出现一次，所以当a[i]从第一个位移到最后一位时，后面比他小的数的逆序数-1，逆序数和sum就要-(a[i])，自身的逆序数要加上整个序列里比他大的数，也就是(n-1)-a[i]，所以sum+=n-1-a[i]-a[i];</li>
 <li>单点修改区间查询</li>
 </ul>
@@ -560,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/A-Simple-Problem-with-Integers-模板/" rel="next" title="A Simple Problem with Integers(模板)">
-                <i class="fa fa-chevron-left"></i> A Simple Problem with Integers(模板)
+              <a href="/I-Hate-It/" rel="next" title="I hate it （最值单点修改区间查询）">
+                <i class="fa fa-chevron-left"></i> I hate it （最值单点修改区间查询）
               </a>
             
           </div>
@@ -646,7 +646,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">113</span>
+                    <span class="site-state-item-count">120</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -764,7 +764,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -865,7 +867,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
