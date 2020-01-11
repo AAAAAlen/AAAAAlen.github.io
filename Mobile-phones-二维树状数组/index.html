@@ -120,15 +120,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mobile phones(二维树状数组)">
 <meta property="og:url" content="https://aaaaalen.github.io/Mobile-phones-二维树状数组/index.html">
-<meta property="og:site_name" content="Nico&#39;s Bolg">
+<meta property="og:site_name" content="Bamboo_Rat&#39;s Bolg">
 <meta property="og:description" content="传送门：Poj-1195题目描述 Suppose that the fourth generation mobile phone base stations in the Tampere area operate as follows. The area is divided into squares. The squares form an S * S matrix with the rows">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz1nzu8qej30qi0a6gqu.jpg">
-<meta property="og:updated_time" content="2018-10-16T07:10:43.433Z">
+<meta property="og:image" content="https://aaaaalen.github.io/image/二维树状数组.png">
+<meta property="og:updated_time" content="2020-01-11T09:51:32.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mobile phones(二维树状数组)">
 <meta name="twitter:description" content="传送门：Poj-1195题目描述 Suppose that the fourth generation mobile phone base stations in the Tampere area operate as follows. The area is divided into squares. The squares form an S * S matrix with the rows">
-<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz1nzu8qej30qi0a6gqu.jpg">
+<meta name="twitter:image" content="https://aaaaalen.github.io/image/二维树状数组.png">
 
 
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>Mobile phones(二维树状数组) | Nico's Bolg</title>
+  <title>Mobile phones(二维树状数组) | Bamboo_Rat's Bolg</title>
   
 
 
@@ -203,7 +203,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nico's Bolg</span>
+        <span class="site-title">Bamboo_Rat's Bolg</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -348,13 +348,13 @@
     <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/Mobile-phones-二维树状数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="name" content="Bamboo_Rat">
       <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nico's Bolg">
+      <meta itemprop="name" content="Bamboo_Rat's Bolg">
     </span>
 
     
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-16 15:10:43" itemprop="dateModified" datetime="2018-10-16T15:10:43+08:00">2018-10-16</time>
+                <time title="修改时间：2020-01-11 17:51:32" itemprop="dateModified" datetime="2020-01-11T17:51:32+08:00">2020-01-11</time>
               
             
           </span>
@@ -467,7 +467,7 @@
 <p>Suppose that the fourth generation mobile phone base stations in the Tampere area operate as follows. The area is divided into squares. The squares form an S * S matrix with the rows and columns numbered from 0 to S-1. Each square contains a base station. The number of active mobile phones inside a square can change because a phone is moved from a square to another or a phone is switched on or off. At times, each base station reports the change in the number of active phones to the main base station along with the row and the column of the matrix.<br>Write a program, which receives these reports and answers queries about the current total number of active mobile phones in any rectangle-shaped area.<br><a id="more"></a></p>
 </blockquote>
 <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
-<p>The input is read from standard input as integers and the answers to the queries are written to standard output as integers. The input is encoded as follows. Each input comes on a separate line, and consists of one instruction integer and a number of parameter integers according to the following table.<br><img src="https://wx1.sinaimg.cn/mw690/006bDeXUgy1fuz1nzu8qej30qi0a6gqu.jpg" alt=""><br>The values will always be in range, so there is no need to check them. In particular, if A is negative, it can be assumed that it will not reduce the square value below zero. The indexing starts at 0, e.g. for a table of size 4 <em> 4, we have 0 &lt;= X &lt;= 3 and 0 &lt;= Y &lt;= 3.<br>Table size: 1 </em> 1 &lt;= S <em> S &lt;= 1024 </em> 1024<br>Cell value V at any time: 0 &lt;= V &lt;= 32767<br>Update amount: -32768 &lt;= A &lt;= 32767<br>No of instructions in input: 3 &lt;= U &lt;= 60002<br>Maximum number of phones in the whole table:$M=2^{30}$</p>
+<p>The input is read from standard input as integers and the answers to the queries are written to standard output as integers. The input is encoded as follows. Each input comes on a separate line, and consists of one instruction integer and a number of parameter integers according to the following table.<br><img src="../image/二维树状数组.png" alt=""><br>The values will always be in range, so there is no need to check them. In particular, if A is negative, it can be assumed that it will not reduce the square value below zero. The indexing starts at 0, e.g. for a table of size 4 <em> 4, we have 0 &lt;= X &lt;= 3 and 0 &lt;= Y &lt;= 3.<br>Table size: 1 </em> 1 &lt;= S <em> S &lt;= 1024 </em> 1024<br>Cell value V at any time: 0 &lt;= V &lt;= 32767<br>Update amount: -32768 &lt;= A &lt;= 32767<br>No of instructions in input: 3 &lt;= U &lt;= 60002<br>Maximum number of phones in the whole table:$M=2^{30}$</p>
 </blockquote>
 <h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
 <ul>
@@ -504,14 +504,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="z-Nico 微信支付"/>
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Bamboo_Rat 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.png" alt="z-Nico 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.png" alt="Bamboo_Rat 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -528,7 +528,7 @@
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>z-Nico</li>
+    <strong>本文作者： </strong>Bamboo_Rat</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="https://aaaaalen.github.io/Mobile-phones-二维树状数组/" title="Mobile phones(二维树状数组)">https://aaaaalen.github.io/Mobile-phones-二维树状数组/</a>
@@ -630,9 +630,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.jpg"
-                alt="z-Nico" />
+                alt="Bamboo_Rat" />
             
-              <p class="site-author-name" itemprop="name">z-Nico</p>
+              <p class="site-author-name" itemprop="name">Bamboo_Rat</p>
               <p class="site-description motion-element" itemprop="description">三旬尚远浓烟散，一如年少迟夏归</p>
           </div>
 
@@ -868,7 +868,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">z-Nico</span>
+  <span class="author" itemprop="copyrightHolder">Bamboo_Rat</span>
 
   
 

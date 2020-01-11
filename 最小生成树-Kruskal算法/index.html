@@ -120,16 +120,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小生成树(Kruskal算法)">
 <meta property="og:url" content="https://aaaaalen.github.io/最小生成树-Kruskal算法/index.html">
-<meta property="og:site_name" content="Nico&#39;s Bolg">
+<meta property="og:site_name" content="Bamboo_Rat&#39;s Bolg">
 <meta property="og:description" content="最小生成树原理及实现">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fvyxugakhkj30ka086gme.jpg">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fvyxugib7tj30rw0oojy9.jpg">
-<meta property="og:updated_time" content="2019-01-28T04:54:08.861Z">
+<meta property="og:image" content="https://aaaaalen.github.io/image/mst.jpg">
+<meta property="og:image" content="https://aaaaalen.github.io/image/kruskal.jpg">
+<meta property="og:updated_time" content="2020-01-11T09:55:14.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最小生成树(Kruskal算法)">
 <meta name="twitter:description" content="最小生成树原理及实现">
-<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fvyxugakhkj30ka086gme.jpg">
+<meta name="twitter:image" content="https://aaaaalen.github.io/image/mst.jpg">
 
 
 
@@ -146,7 +146,7 @@
   };
 </script>
 
-  <title>最小生成树(Kruskal算法) | Nico's Bolg</title>
+  <title>最小生成树(Kruskal算法) | Bamboo_Rat's Bolg</title>
   
 
 
@@ -204,7 +204,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nico's Bolg</span>
+        <span class="site-title">Bamboo_Rat's Bolg</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -349,13 +349,13 @@
     <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/最小生成树-Kruskal算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="z-Nico">
+      <meta itemprop="name" content="Bamboo_Rat">
       <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nico's Bolg">
+      <meta itemprop="name" content="Bamboo_Rat's Bolg">
     </span>
 
     
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-28 12:54:08" itemprop="dateModified" datetime="2019-01-28T12:54:08+08:00">2019-01-28</time>
+                <time title="修改时间：2020-01-11 17:55:14" itemprop="dateModified" datetime="2020-01-11T17:55:14+08:00">2020-01-11</time>
               
             
           </span>
@@ -471,8 +471,8 @@
 <li><strong>强连通图：</strong>在有向图中，若任意两个顶点与都有路径相通，则称该有向图为强连通图。</li>
 <li><strong>连通网：</strong>在连通图中，若图的边具有一定的意义，每一条边都对应着一个数，称为权；权代表着连接连个顶点的代价，称这种连通图叫做连通网。</li>
 <li><strong>生成树：</strong>一个连通图的生成树是指一个连通子图，它含有图中全部n个顶点，但只有足以构成一棵树的n-1条边。一颗有n个顶点的生成树有且仅有n-1条边，如果生成树中再添加一条边，则必定成环。</li>
-<li><strong>最小生成树：</strong>在连通网的所有生成树中，所有边的代价和最小的生成树，称为最小生成树。<br><img src="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fvyxugakhkj30ka086gme.jpg" alt=""></li>
-<li>Kruskal算法即为加边法<br><img src="https://wx4.sinaimg.cn/mw690/006bDeXUgy1fvyxugib7tj30rw0oojy9.jpg" alt=""></li>
+<li><strong>最小生成树：</strong>在连通网的所有生成树中，所有边的代价和最小的生成树，称为最小生成树。<br><img src="../image/mst.jpg" alt=""></li>
+<li>Kruskal算法即为加边法<br><img src="../image/kruskal.jpg" alt=""></li>
 </ul>
 </blockquote>
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">120</span>];</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dao</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">    <span class="keyword">double</span> dis;</span><br><span class="line">&#125; dao;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmd</span><span class="params">(dao a,dao b)</span> </span>&#123; <span class="comment">//排序 </span></span><br><span class="line">    <span class="keyword">return</span> a.dis &lt;b.dis;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//找根节点 </span></span><br><span class="line">    <span class="keyword">return</span> f[n]==n?n:f[n]=find(f[n]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123; <span class="comment">//初始化 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">120</span>; i++)</span><br><span class="line">        f[i]=i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">heb</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123; <span class="comment">//合并并判断是否为环</span></span><br><span class="line">    <span class="keyword">int</span> fa=find(a),fb=find(b);</span><br><span class="line">    <span class="keyword">if</span>(fa!=fb) &#123;</span><br><span class="line">        f[fa]=fb;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t,c;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;t) &#123;</span><br><span class="line">        <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">            dao s[<span class="number">10005</span>];</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;c;</span><br><span class="line">            <span class="keyword">double</span> x[<span class="number">101</span>],y[<span class="number">101</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;c; i++)</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;x[i]&gt;&gt;y[i];</span><br><span class="line">            <span class="keyword">int</span> k=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;c<span class="number">-1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;c; j++) &#123;</span><br><span class="line">                    <span class="keyword">double</span> num=(x[i]-x[j])*(x[i]-x[j])+(y[i]-y[j])*(y[i]-y[j]);</span><br><span class="line">                    <span class="keyword">if</span>(num&gt;=<span class="number">100</span>&amp;&amp;num&lt;=<span class="number">1000000</span>) &#123;</span><br><span class="line">                        s[k].a =i;</span><br><span class="line">                        s[k].b =j;</span><br><span class="line">                        s[k].dis =<span class="built_in">sqrt</span>(num);</span><br><span class="line">                        k++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            sort(s,s+k,cmd);</span><br><span class="line">            init();</span><br><span class="line">            <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(heb(s[i].a,s[i].b )) &#123;</span><br><span class="line">                    sum+=s[i].dis ;</span><br><span class="line">                    flag++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag==c<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">"%.1lf\n"</span>,sum*<span class="number">100</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"oh!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -499,14 +499,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="z-Nico 微信支付"/>
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Bamboo_Rat 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.png" alt="z-Nico 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.png" alt="Bamboo_Rat 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -523,7 +523,7 @@
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>z-Nico</li>
+    <strong>本文作者： </strong>Bamboo_Rat</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="https://aaaaalen.github.io/最小生成树-Kruskal算法/" title="最小生成树(Kruskal算法)">https://aaaaalen.github.io/最小生成树-Kruskal算法/</a>
@@ -552,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/最小生成树-prim算法/" rel="next" title="最小生成树(Prim算法)">
-                <i class="fa fa-chevron-left"></i> 最小生成树(Prim算法)
+              <a href="/并查集/" rel="next" title="并查集">
+                <i class="fa fa-chevron-left"></i> 并查集
               </a>
             
           </div>
@@ -562,8 +562,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/并查集/" rel="prev" title="并查集">
-                并查集 <i class="fa fa-chevron-right"></i>
+              <a href="/最小生成树-prim算法/" rel="prev" title="最小生成树(Prim算法)">
+                最小生成树(Prim算法) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -625,9 +625,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.jpg"
-                alt="z-Nico" />
+                alt="Bamboo_Rat" />
             
-              <p class="site-author-name" itemprop="name">z-Nico</p>
+              <p class="site-author-name" itemprop="name">Bamboo_Rat</p>
               <p class="site-description motion-element" itemprop="description">三旬尚远浓烟散，一如年少迟夏归</p>
           </div>
 
@@ -863,7 +863,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">z-Nico</span>
+  <span class="author" itemprop="copyrightHolder">Bamboo_Rat</span>
 
   
 
