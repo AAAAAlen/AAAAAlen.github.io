@@ -115,23 +115,25 @@
 
 
 
-  <meta name="description" content="三旬尚远浓烟散，一如年少迟夏归">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bamboo_Rat&#39;s Bolg">
-<meta property="og:url" content="https://aaaaalen.github.io/tags/进阶练习/index.html">
+  <meta name="description" content="题解A - Jumping Buildings  题意：给出n个数，在位置i上可移动到min(i+a[i],n)且仅移动一次，若中间有大于a[i]的数a[j]，则移动到j-1，求出每个位置移动的终点。 思路：从后往前遍历，用递减单调栈维护右边第一个比它高的位置。 Code 存在问题：读错题，以为可以多次跳；单调栈太久没写，coding生疏   B - Divples  题意：给出a和b两个数，找出">
+<meta name="keywords" content="训练总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="杭师训练赛3总结">
+<meta property="og:url" content="https://aaaaalen.github.io/杭师训练赛3总结/index.html">
 <meta property="og:site_name" content="Bamboo_Rat&#39;s Bolg">
-<meta property="og:description" content="三旬尚远浓烟散，一如年少迟夏归">
+<meta property="og:description" content="题解A - Jumping Buildings  题意：给出n个数，在位置i上可移动到min(i+a[i],n)且仅移动一次，若中间有大于a[i]的数a[j]，则移动到j-1，求出每个位置移动的终点。 思路：从后往前遍历，用递减单调栈维护右边第一个比它高的位置。 Code 存在问题：读错题，以为可以多次跳；单调栈太久没写，coding生疏   B - Divples  题意：给出a和b两个数，找出">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-09T13:44:37.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bamboo_Rat&#39;s Bolg">
-<meta name="twitter:description" content="三旬尚远浓烟散，一如年少迟夏归">
+<meta name="twitter:title" content="杭师训练赛3总结">
+<meta name="twitter:description" content="题解A - Jumping Buildings  题意：给出n个数，在位置i上可移动到min(i+a[i],n)且仅移动一次，若中间有大于a[i]的数a[j]，则移动到j-1，求出每个位置移动的终点。 思路：从后往前遍历，用递减单调栈维护右边第一个比它高的位置。 Code 存在问题：读错题，以为可以多次跳；单调栈太久没写，coding生疏   B - Divples  题意：给出a和b两个数，找出">
 
 
 
 
 
 
-  <link rel="canonical" href="https://aaaaalen.github.io/tags/进阶练习/"/>
+  <link rel="canonical" href="https://aaaaalen.github.io/杭师训练赛3总结/"/>
 
 
 
@@ -141,7 +143,7 @@
   };
 </script>
 
-  <title>标签: 进阶练习 | Bamboo_Rat's Bolg</title>
+  <title>杭师训练赛3总结 | Bamboo_Rat's Bolg</title>
   
 
 
@@ -188,7 +190,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
    <a href="https://github.com/AAAAAlen" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,7 +243,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -321,84 +323,267 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>进阶练习<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/杭师训练赛3总结/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bamboo_Rat">
+      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bamboo_Rat's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/进阶练习-搜索/" itemprop="url">
-              
-                <span itemprop="name">进阶练习-搜索</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">杭师训练赛3总结
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-10T20:01:26+08:00"
-              content="2019-08-10" >
-          08-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2020-02-09 20:31:47 / 修改时间：21:44:37" itemprop="dateCreated datePublished" datetime="2020-02-09T20:31:47+08:00">2020-02-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="A-Jumping-Buildings"><a href="#A-Jumping-Buildings" class="headerlink" title="A - Jumping Buildings"></a><a href="http://codeforces.com/gym/102302/problem/A" target="_blank" rel="noopener">A - Jumping Buildings</a></h2><blockquote>
+<ul>
+<li>题意：给出n个数，在位置i上可移动到min(i+a[i],n)且仅移动一次，若中间有大于a[i]的数a[j]，则移动到j-1，求出每个位置移动的终点。</li>
+<li>思路：从后往前遍历，用递减单调栈维护右边第一个比它高的位置。</li>
+<li><a href="">Code</a></li>
+<li>存在问题：读错题，以为可以多次跳；单调栈太久没写，coding生疏</li>
+</ul>
+</blockquote>
+<h2 id="B-Divples"><a href="#B-Divples" class="headerlink" title="B - Divples"></a><a href="http://codeforces.com/gym/102302/problem/B" target="_blank" rel="noopener">B - Divples</a></h2><blockquote>
+<ul>
+<li>题意：给出a和b两个数，找出所有数c，满足a%c==0 &amp;&amp; c%b==0。(1&lt;=b&lt;=a&lt;=1e12)</li>
+<li>思路：找出a的所有因数，再在里面找出所有b的倍数，排序输出即可</li>
+<li><a href="">Code</a></li>
+<li>存在问题：一开始想将a/b分解因式，找到所有约数，没想到这能T。。。然后老老实实sqrt(n)扫过去。</li>
+</ul>
+</blockquote>
+<h2 id="C-Rectangles"><a href="#C-Rectangles" class="headerlink" title="C - Rectangles"></a><a href="http://codeforces.com/gym/102302/problem/C" target="_blank" rel="noopener">C - Rectangles</a></h2><blockquote>
+<ul>
+<li>题意：给出N(&lt;=2000)个点，求这些点能组成的矩形个数，满足矩形内部和边界不包含其他点且矩形的边平行于坐标轴。</li>
+<li>思路：先将x,y离散化，按y轴从下至上扫描，对于同一高度，枚举相邻点i和j，再在i和j上方分别找到第一次出现的点，看两个点的y坐标是否相等，若相等，再判断这四个点构成的矩形中是否有其他点，可用二维前缀和预处理后O(1)询问。</li>
+<li><a href="">Code</a></li>
+<li>存在问题：中途代错参数一直没找到（还过了15个点。。。），裂开。</li>
+</ul>
+</blockquote>
+<h2 id="D-Guessing-Messages"><a href="#D-Guessing-Messages" class="headerlink" title="D - Guessing Messages "></a><a href="http://codeforces.com/gym/102302/problem/D" target="_blank" rel="noopener">D - Guessing Messages </a></h2><blockquote>
+<ul>
+<li>题意：给两个串a,b，问b是否是a的子序列</li>
+<li>思路：扫过去即可。</li>
+<li><a href="">Code</a></li>
+</ul>
+</blockquote>
+<h2 id="E-Chi’s-performance"><a href="#E-Chi’s-performance" class="headerlink" title="E - Chi’s performance"></a><a href="http://codeforces.com/gym/102302/problem/E" target="_blank" rel="noopener">E - Chi’s performance</a></h2><h2 id="F-Drawing-cards"><a href="#F-Drawing-cards" class="headerlink" title="F - Drawing cards"></a><a href="http://codeforces.com/gym/102302/problem/F" target="_blank" rel="noopener">F - Drawing cards</a></h2><blockquote>
+<ul>
+<li>题意：共1到n张纸牌，每次抽一张牌，如果抽到重复的就放回去，否则放到桌子上，并把一张新的相同的牌放进去，求第一次抽到1时桌上纸牌的期望值。</li>
+<li>思路：桌上牌数可为(1~n)张且等概率出现，每种结果的概率均为1/n，E(x)=(1+2+…+n)/n</li>
+<li><a href="">Code</a></li>
+<li>存在问题：读错题，开局狂卡。。。</li>
+</ul>
+</blockquote>
+<h2 id="G-Left-Stack-Game"><a href="#G-Left-Stack-Game" class="headerlink" title="G - Left Stack Game"></a><a href="http://codeforces.com/gym/102302/problem/G" target="_blank" rel="noopener">G - Left Stack Game</a></h2><div class="tabs" id="960"><ul class="nav-tabs"><li class="tab active"><a href="#960-1">题解</a></li><li class="tab"><a href="#960-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="960-1"><blockquote>
+<ul>
+<li>题意：给出三堆石子x,y,z，每次一堆中取1~m颗，当左边存在石子时右边不能为空，问是否先手必胜</li>
+<li>思路：从y,z中各去掉一个石子后限制条件即可消除，求三堆函数的sg值，每一堆都是一个巴什博弈，最后由于y、z各剩一颗，所以上面的处理方法不会对答案有影响。</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="960-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> clr(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(int i=a;i&lt;=b;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repd(i,a,b) for(int i=a;i&gt;=b;--i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dbg(a,i,n) printf(<span class="meta-string">"%d %c"</span>,a,<span class="meta-string">" \n"</span>[i==n])</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll linf=(<span class="number">1l</span>l&lt;&lt;<span class="number">62</span>)<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">3e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">2e6</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">rd</span><span class="params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;<span class="keyword">int</span> sign=<span class="number">1</span>;x=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span>&#123;c=getchar();<span class="keyword">if</span>(c==<span class="string">'-'</span>)sign=<span class="number">-1</span>;&#125;<span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">do</span>&#123;x=x*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;<span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>);</span><br><span class="line">    x*=sign;</span><br><span class="line">&#125;</span><br><span class="line">ll x,y,z,m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld%lld"</span>,&amp;m,&amp;x,&amp;y,&amp;z);</span><br><span class="line">    ll a=<span class="number">0</span>,b=<span class="number">0</span>,c=<span class="number">0</span>;</span><br><span class="line">    a=x%(m+<span class="number">1</span>);</span><br><span class="line">    b=(y<span class="number">-1</span>)%(m+<span class="number">1</span>);</span><br><span class="line">    c=(z<span class="number">-1</span>)%(m+<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">puts</span>((a^b^c)?<span class="string">"Tomaz"</span>:<span class="string">"Danftito"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Bamboo_Rat 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Bamboo_Rat 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Bamboo_Rat</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://aaaaalen.github.io/杭师训练赛3总结/" title="杭师训练赛3总结">https://aaaaalen.github.io/杭师训练赛3总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/训练总结/" rel="tag"># 训练总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/进阶训练-动态规划/" rel="next" title="进阶训练-动态规划">
+                <i class="fa fa-chevron-left"></i> 进阶训练-动态规划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -419,8 +604,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -439,7 +633,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">121</span>
+                    <span class="site-state-item-count">123</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -470,9 +664,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -630,6 +822,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Jumping-Buildings"><span class="nav-number">1.1.</span> <span class="nav-text">A - Jumping Buildings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Divples"><span class="nav-number">1.2.</span> <span class="nav-text">B - Divples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Rectangles"><span class="nav-number">1.3.</span> <span class="nav-text">C - Rectangles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Guessing-Messages"><span class="nav-number">1.4.</span> <span class="nav-text">D - Guessing Messages </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Chi’s-performance"><span class="nav-number">1.5.</span> <span class="nav-text">E - Chi’s performance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-Drawing-cards"><span class="nav-number">1.6.</span> <span class="nav-text">F - Drawing cards</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-Left-Stack-Game"><span class="nav-number">1.7.</span> <span class="nav-text">G - Left Stack Game</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -792,6 +1000,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
