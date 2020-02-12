@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Bamboo_Rat&#39;s Bolg">
 <meta property="og:description" content="质数，约数（反素数，除法分块），欧拉函数，同余（费马小，欧拉定理，欧拉降幂，exgcd，中国剩余定理，乘法逆元，线性同余方程，高次同余方程），矩阵快速幂，高斯消元，线性空间（生成子集，线性相关和线性无关，基底，矩阵的秩，线性基），组合数（二项式定理，多重集的排列数和组合数，卢卡斯定理，卡特兰数），容斥原理（多重集组合数），莫比乌斯函数（莫比乌斯反演），概率与数学期望，0/1分数规划，博弈论之SG">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T12:33:10.118Z">
+<meta property="og:updated_time" content="2020-02-11T08:35:46.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进阶训练-数论">
 <meta name="twitter:description" content="质数，约数（反素数，除法分块），欧拉函数，同余（费马小，欧拉定理，欧拉降幂，exgcd，中国剩余定理，乘法逆元，线性同余方程，高次同余方程），矩阵快速幂，高斯消元，线性空间（生成子集，线性相关和线性无关，基底，矩阵的秩，线性基），组合数（二项式定理，多重集的排列数和组合数，卢卡斯定理，卡特兰数），容斥原理（多重集组合数），莫比乌斯函数（莫比乌斯反演），概率与数学期望，0/1分数规划，博弈论之SG">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-10 20:33:10" itemprop="dateModified" datetime="2020-02-10T20:33:10+08:00">2020-02-10</time>
+                <time title="修改时间：2020-02-11 16:35:46" itemprop="dateModified" datetime="2020-02-11T16:35:46+08:00">2020-02-11</time>
               
             
           </span>
@@ -531,14 +531,15 @@
 </blockquote>
 <h1 id="矩阵快速幂"><a href="#矩阵快速幂" class="headerlink" title="矩阵快速幂"></a>矩阵快速幂</h1><blockquote>
 <ul>
-<li>以下情况可以考虑用矩阵快速幂优化。把长为n的一维向量称为“状态矩阵”，把用于与“状态矩阵”相乘的固定不变的矩阵A称为“转移矩阵”。若状态矩阵中的<strong>第x个数对下一单位时间状态矩阵中的第y个数产生影响</strong>，则把转移矩阵的<strong>第x行第y列</strong>赋予适当的系数。时间复杂度为O(n^3logT)，其中n为状态矩阵长度（一般不会很大），T为递推次数。<ul>
+<li>构造方式：把长为n的一维向量称为“状态矩阵”，把用于与“状态矩阵”相乘的固定不变的矩阵A称为“转移矩阵”。若状态矩阵中的<strong>第x个数对下一单位时间状态矩阵中的第y个数产生影响</strong>，则把转移矩阵的<strong>第x行第y列</strong>赋予适当的系数。时间复杂度为O(n^3logT)，其中n为状态矩阵长度（一般不会很大），T为递推次数。</li>
+<li>以下情况可以考虑用矩阵快速幂优化。<ul>
 <li>可以抽象出一个长度为n的一维向量，该向量在每个单位时间发生一次变化。</li>
 <li>变化的形式是一个线性递推（只有若干“加法”或“乘一个系数”的运算）。</li>
 <li>该递推是在每个时间可能作用于不同的数据上，但本身保持不变。</li>
 <li>向量变化时间（即递推次数）很长，但向量长度n不大。</li>
 </ul>
 </li>
-<li><a href="http://bamboo-rat.cn/%E6%9D%AD%E5%B8%88%E8%AE%AD%E7%BB%83%E8%B5%9B3%E6%80%BB%E7%BB%93/#more" target="_blank" rel="noopener">例题：H</a></li>
+<li><a href="http://bamboo-rat.cn/%E6%9D%AD%E5%B8%88%E8%AE%AD%E7%BB%83%E8%B5%9B3%E6%80%BB%E7%BB%93/#more" target="_blank" rel="noopener">例题：H</a><br><a href="https://www.acwing.com/activity/content/code/content/199311/" target="_blank" rel="noopener">取石头</a></li>
 </ul>
 </blockquote>
 <h1 id="高斯消元"><a href="#高斯消元" class="headerlink" title="高斯消元"></a>高斯消元</h1><blockquote>
@@ -826,7 +827,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">123</span>
+                    <span class="site-state-item-count">124</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

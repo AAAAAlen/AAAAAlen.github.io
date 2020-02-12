@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/avatar.jpg?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.ico?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="杭师训练赛第四场手速场">
+<meta property="og:type" content="article">
+<meta property="og:title" content="杭师训练赛4总结">
+<meta property="og:url" content="https://aaaaalen.github.io/杭师训练赛4总结/index.html">
+<meta property="og:site_name" content="Bamboo_Rat&#39;s Bolg">
+<meta property="og:description" content="杭师训练赛第四场手速场">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://aaaaalen.github.io/image/叉积判断点在凸包内.png">
+<meta property="og:updated_time" content="2020-02-12T10:14:37.076Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="杭师训练赛4总结">
+<meta name="twitter:description" content="杭师训练赛第四场手速场">
+<meta name="twitter:image" content="https://aaaaalen.github.io/image/叉积判断点在凸包内.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://aaaaalen.github.io/杭师训练赛4总结/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>杭师训练赛4总结 | Bamboo_Rat's Bolg</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   <a href="https://github.com/AAAAAlen" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bamboo_Rat's Bolg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaaaalen.github.io/杭师训练赛4总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bamboo_Rat">
+      <meta itemprop="description" content="三旬尚远浓烟散，一如年少迟夏归">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bamboo_Rat's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">杭师训练赛4总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-12 17:07:41 / 修改时间：18:14:37" itemprop="dateCreated datePublished" datetime="2020-02-12T17:07:41+08:00">2020-02-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="杭师训练赛第四场"><a href="#杭师训练赛第四场" class="headerlink" title="杭师训练赛第四场"></a>杭师训练赛第四场</h1><p>手速场<br><a id="more"></a></p>
+<h2 id="A-Mental-Rotation"><a href="#A-Mental-Rotation" class="headerlink" title="A - Mental Rotation"></a><a href="http://codeforces.com/gym/102219/problem/A" target="_blank" rel="noopener">A - Mental Rotation</a></h2><div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><a href="#a-1">题解</a></li><li class="tab"><a href="#a-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="a-1"><blockquote>
+<ul>
+<li>题意：给出n*n的字符矩阵和旋转序列，L表示逆时针旋转，R表示顺时针旋转，求完成整个旋转序列后的矩阵。</li>
+</ul>
+<ul>
+<li>思路：<ul>
+<li>统计逆时针旋转的次数num， 因为旋转4次相当于没有旋转，所以旋转(num%4+4)%4次即可。</li>
+<li>逆时针旋转90度：a[i][j] = b[j][n-i+1] ,i,j均从1开始</li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="a-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">string</span> op;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">char</span> s[N][N],a[N][N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">charge</span><span class="params">()</span></span>&#123;</span><br><span class="line">    rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">        rep(j,<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="keyword">int</span> k=n-i+<span class="number">1</span>;</span><br><span class="line">            a[i][j] = s[j][k];</span><br><span class="line">            <span class="keyword">if</span>(a[i][j]==<span class="string">'v'</span>) a[i][j]=<span class="string">'&gt;'</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(a[i][j]==<span class="string">'&gt;'</span>) a[i][j]=<span class="string">'^'</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(a[i][j]==<span class="string">'^'</span>) a[i][j]=<span class="string">'&lt;'</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(a[i][j]==<span class="string">'&lt;'</span>) a[i][j]=<span class="string">'v'</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memcpy</span>(s,a,<span class="keyword">sizeof</span>(s));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;op;</span><br><span class="line">    rep(i,<span class="number">1</span>,n)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s[i]+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;op.size();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(op[i]==<span class="string">'L'</span>) num++;</span><br><span class="line">        <span class="keyword">else</span> num--;</span><br><span class="line">    &#125;</span><br><span class="line">    ((num%=<span class="number">4</span>) +=<span class="number">4</span>) %= <span class="number">4</span>;</span><br><span class="line">    rep(i,<span class="number">1</span>,num) charge();</span><br><span class="line">    rep(i,<span class="number">1</span>,n)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,s[i]+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="B-SpongeBob-SquarePants"><a href="#B-SpongeBob-SquarePants" class="headerlink" title="B - SpongeBob SquarePants"></a><a href="http://codeforces.com/gym/102219/problem/B" target="_blank" rel="noopener">B - SpongeBob SquarePants</a></h2><div class="tabs" id="b"><ul class="nav-tabs"><li class="tab active"><a href="#b-1">题解</a></li><li class="tab"><a href="#b-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="b-1"><blockquote>
+<ul>
+<li>题意：给定长宽判定是否为正方形</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="b-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t,a,b;</span><br><span class="line">    rd(t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        rd(a),rd(b);</span><br><span class="line">        <span class="keyword">if</span>(a==b) <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="C-I-Don’t-Want-To-Pay-For-The-Late-Jar"><a href="#C-I-Don’t-Want-To-Pay-For-The-Late-Jar" class="headerlink" title="C - I Don’t Want To Pay For The Late Jar!"></a><a href="http://codeforces.com/gym/102219/problem/C" target="_blank" rel="noopener">C - I Don’t Want To Pay For The Late Jar!</a></h2><div class="tabs" id="c"><ul class="nav-tabs"><li class="tab active"><a href="#c-1">题解</a></li><li class="tab"><a href="#c-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="c-1"><blockquote>
+<ul>
+<li>题意：给定d组数据，每组一个n和s，后面n行输入fi和ti，若s&gt;=ti，第i项权值为fi，否则第i项权值为fi-(ti-s)，求最大权值。</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="c-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> d,n;</span><br><span class="line">ll s,t,f;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    rd(d);</span><br><span class="line">    rep(_,<span class="number">1</span>,d)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%lld"</span>,&amp;n,&amp;s);</span><br><span class="line">        ll ans = -inf;</span><br><span class="line">        rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;f,&amp;t);</span><br><span class="line">            <span class="keyword">if</span>(t&lt;=s) ans = max(ans,f);</span><br><span class="line">            <span class="keyword">else</span> ans = max(ans,f-t+s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case #%d: %lld\n"</span>,_,ans);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="E-Optimal-Slots"><a href="#E-Optimal-Slots" class="headerlink" title="E - Optimal Slots "></a><a href="http://codeforces.com/gym/102219/problem/E" target="_blank" rel="noopener">E - Optimal Slots </a></h2><div class="tabs" id="e"><ul class="nav-tabs"><li class="tab active"><a href="#e-1">题解</a></li><li class="tab"><a href="#e-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="e-1"><blockquote>
+<ul>
+<li>题意：有n个节目需要安排，每个节目占用一定单位的时间，各个节目的时间不能重合，你有T单位的时间可以使用，问最多可以安排多少时间，并且输出字典序最小的具体方案。</li>
+<li>思路：<a href="http://bamboo-rat.cn/%E6%B1%82%E8%A7%A3%E8%83%8C%E5%8C%85%E5%85%B7%E4%BD%93%E6%96%B9%E6%A1%88/" target="_blank" rel="noopener">01背包求具体方案</a>。</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="e-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> m,n,a[<span class="number">200</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">200</span>][<span class="number">200</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m)&amp;&amp;m)&#123;</span><br><span class="line">        clr(f,<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        rep(i,<span class="number">1</span>,n) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        repd(i,n,<span class="number">1</span>)&#123;</span><br><span class="line">            rep(j,<span class="number">0</span>,m)&#123;</span><br><span class="line">                f[i][j] = f[i+<span class="number">1</span>][j];</span><br><span class="line">                <span class="keyword">if</span>(j&gt;=a[i])f[i][j] = max(f[i][j],f[i+<span class="number">1</span>][j-a[i]]+a[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> j=m;</span><br><span class="line">        rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j&gt;=a[i] &amp;&amp; i==n)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[n]);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(j&lt;=<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span>(j-a[i]&gt;=<span class="number">0</span> &amp;&amp; f[i][j]==f[i+<span class="number">1</span>][j-a[i]]+a[i])&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">                j-=a[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,f[<span class="number">1</span>][m]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="F-Military-Class"><a href="#F-Military-Class" class="headerlink" title="F - Military Class "></a><a href="http://codeforces.com/gym/102219/problem/F" target="_blank" rel="noopener">F - Military Class </a></h2><div class="tabs" id="f"><ul class="nav-tabs"><li class="tab active"><a href="#f-1">题解</a></li><li class="tab"><a href="#f-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="f-1"><blockquote>
+<ul>
+<li>题意：有2n个士兵排成两行，每行都从1到n进行标记。现在要将这些士兵两两配对。给出k对关系(i,j)，第一行的i和第二行的j不能配对，问有多少种方案可以完成n组配对。（n&lt;2000,e&lt;5,k&lt;2000）</li>
+</ul>
+<ul>
+<li>思路<ul>
+<li>e&lt;5是一个关键信息，一般这种情况极大的可能是状压dp。</li>
+<li>f[i][j]表示在处理到第2行第i个士兵时，第1行中与之距离&lt;=e的士兵的匹配情况，采用状态压缩，1表示已匹配，0表示未匹配，j的范围为[0,2^(2*e+1)-1]</li>
+<li><code>f[i][j] = ∑(f[i-1][ (j^(1&lt;&lt;k)) &gt;&gt;1]) + ∑(f[i][j] += f[i-1][( (j^(1&lt;&lt;k)) &gt;&gt;1) | (1&lt;&lt;2*e)])</code></li>
+<li>初态：f[1][j]=1，其中j的二进制位只有1个1。</li>
+<li>终态：f[n][num]，num为j的最高e+1位全1的状态。</li>
+<li>上式含义为对于第i个阶段的状态j，枚举j的第k位为1的情况A，A的答案由上一个阶段在相应位置没有1情况B转移得到，所以要先将j的第k为先置0。由于j只能包含当前状态的2*e+1个位置，所以上一个阶段的状态需要由j右移一位得到，而最高位有0和1两种状态，都要分别记入答案。</li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="f-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">ll f[N][N];</span><br><span class="line"><span class="keyword">int</span> mp[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,e,p;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;e,&amp;p);</span><br><span class="line">    rep(i,<span class="number">1</span>,p)&#123;</span><br><span class="line">        <span class="keyword">int</span> x,y;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y);</span><br><span class="line">        mp[x][y] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sta = <span class="number">1</span>&lt;&lt;(<span class="number">2</span>*e+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=max(e+<span class="number">1</span>-n,<span class="number">0</span>);j&lt;=e;j++)</span><br><span class="line">        <span class="keyword">if</span>(!mp[<span class="number">1</span>+e-j][<span class="number">1</span>]) f[<span class="number">1</span>][<span class="number">1</span>&lt;&lt;j]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;sta;j++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=<span class="number">2</span>*e;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i+e-k&gt;n) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(i+e-k&lt;=<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span>((j&amp;(<span class="number">1</span>&lt;&lt;k)))&#123;</span><br><span class="line">                    <span class="keyword">if</span>(mp[i+e-k][i]) <span class="keyword">continue</span>;</span><br><span class="line">                    (f[i][j] += f[i<span class="number">-1</span>][(j^(<span class="number">1</span>&lt;&lt;k))&gt;&gt;<span class="number">1</span>])%=mod;</span><br><span class="line">                    (f[i][j] += f[i<span class="number">-1</span>][((j^(<span class="number">1</span>&lt;&lt;k))&gt;&gt;<span class="number">1</span>)|(<span class="number">1</span>&lt;&lt;<span class="number">2</span>*e)])%=mod;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans=<span class="number">0</span>, num = sta<span class="number">-1</span>;</span><br><span class="line">    rep(i,<span class="number">0</span>,e<span class="number">-1</span>) num-=(<span class="number">1</span>&lt;&lt;i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,f[n][num]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="H-Are-You-Safe"><a href="#H-Are-You-Safe" class="headerlink" title="H - Are You Safe? "></a><a href="http://codeforces.com/gym/102219/problem/H" target="_blank" rel="noopener">H - Are You Safe? </a></h2><div class="tabs" id="h"><ul class="nav-tabs"><li class="tab active"><a href="#h-1">题解</a></li><li class="tab"><a href="#h-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="h-1"><blockquote>
+<ul>
+<li>题意：给出n个点，求凸包，再给p个点，问这些点是否在凸包内。</li>
+</ul>
+<ul>
+<li>思路<ul>
+<li><a href="http://bamboo-rat.cn/%E5%87%B8%E5%8C%85%E9%9D%A2%E7%A7%AF/" target="_blank" rel="noopener">求凸包</a></li>
+<li>判定点是否在凸包内：P-A得到向量x，P-B得到向量y，求x和y的叉积f。依次求出凸包上相邻两点的叉积，若当前求出的叉积与上一次求出的叉积符号不同，则说明点不在凸包内。<br><img src="../image/叉积判断点在凸包内.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="h-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dcmp</span><span class="params">(<span class="keyword">double</span> x)</span>  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">fabs</span>(x)&lt;eps)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> x&gt;<span class="number">0</span>?<span class="number">1</span>:<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span>&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">    inline Point(double x=0,double y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">&#125;p[N],ch[N],p1[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">myCmp</span><span class="params">(Point A,Point B)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(A.x!=B.x)<span class="keyword">return</span> A.x&lt;B.x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> A.y&lt;B.y;</span><br><span class="line">&#125;</span><br><span class="line">Point <span class="keyword">operator</span> + (Point A,Point B)&#123;</span><br><span class="line">    <span class="keyword">return</span> Point(A.x+B.x,A.y+B.y);</span><br><span class="line">&#125;</span><br><span class="line">Point <span class="keyword">operator</span> - (Point A,Point B)&#123;</span><br><span class="line">    <span class="keyword">return</span> Point(A.x-B.x,A.y-B.y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> == (<span class="keyword">const</span> Point&amp; A,<span class="keyword">const</span> Point&amp; B)&#123;</span><br><span class="line">    <span class="keyword">return</span> dcmp(A.x-B.x)==<span class="number">0</span>&amp;&amp;dcmp(A.y-B.y)==<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Cross</span><span class="params">(Point A,Point B)</span>  <span class="comment">// 计算叉积</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> A.x * B.y - A.y * B.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ConvexHull</span><span class="params">()</span></span>&#123;</span><br><span class="line">    sort(p+<span class="number">1</span>,p+n+<span class="number">1</span>,myCmp);</span><br><span class="line">    <span class="keyword">int</span> m=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(m&gt;<span class="number">1</span> &amp;&amp; dcmp(Cross(ch[m<span class="number">-1</span>]-ch[m<span class="number">-2</span>],p[i]-ch[m<span class="number">-2</span>]))&lt;=<span class="number">0</span>)m--;</span><br><span class="line">        ch[m++]=p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> k=m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">while</span>(m&gt;k &amp;&amp; dcmp(Cross(ch[m<span class="number">-1</span>]-ch[m<span class="number">-2</span>],p[i]-ch[m<span class="number">-2</span>]))&lt;=<span class="number">0</span>)m--;</span><br><span class="line">        ch[m++]=p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Dis</span><span class="params">(Point A,Point B)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(Point A,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    Point a1 = A-ch[<span class="number">0</span>], a2=A-ch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">double</span> f = Cross(a1,a2);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;m<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        a1 = A-ch[i], a2 = A-ch[i+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">double</span> f1=Cross(a1,a2);</span><br><span class="line">        <span class="keyword">if</span>(f1*f &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        f=f1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t,q,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    rep(_,<span class="number">1</span>,t)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;q);</span><br><span class="line">        rep(i,<span class="number">1</span>,n)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;p[i].x,&amp;p[i].y);</span><br><span class="line">        rep(i,<span class="number">1</span>,q)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;p1[i].x,&amp;p1[i].y);</span><br><span class="line">        m=ConvexHull();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d\n"</span>,_);</span><br><span class="line">        rep(i,<span class="number">0</span>,m<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.0f %.0f\n"</span>,ch[i].x,ch[i].y);</span><br><span class="line">        &#125;</span><br><span class="line">        rep(i,<span class="number">1</span>,q)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.0f %.0f is "</span>,p1[i].x,p1[i].y);</span><br><span class="line">            <span class="keyword">if</span>(check(p1[i],m)) <span class="built_in">puts</span>(<span class="string">"unsafe!"</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"safe!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="I-To-Crash-Or-Not-To-Crash"><a href="#I-To-Crash-Or-Not-To-Crash" class="headerlink" title="I - To Crash Or Not To Crash"></a><a href="http://codeforces.com/gym/102219/problem/I" target="_blank" rel="noopener">I - To Crash Or Not To Crash</a></h2><div class="tabs" id="i"><ul class="nav-tabs"><li class="tab active"><a href="#i-1">题解</a></li><li class="tab"><a href="#i-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="i-1"><blockquote>
+<ul>
+<li>题意：给一个字符矩阵，找到’=’右边第一个不是’.’的字符</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="i-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">10</span>][<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    rep(i,<span class="number">1</span>,<span class="number">3</span>) <span class="built_in">scanf</span>(<span class="string">"%s"</span>,a[i]+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>, y=<span class="number">0</span>;</span><br><span class="line">    rep(i,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">        rep(j,<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">            <span class="keyword">if</span>(a[i][j] == <span class="string">'='</span>)&#123;</span><br><span class="line">                x=i, y=j;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    rep(j,y+<span class="number">1</span>,<span class="number">10</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[x][j]!=<span class="string">'.'</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%c\n"</span>,a[x][j]);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"You shall pass!!!"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="J-Kitchen-Plates"><a href="#J-Kitchen-Plates" class="headerlink" title="J - Kitchen Plates "></a><a href="http://codeforces.com/gym/102219/problem/J" target="_blank" rel="noopener">J - Kitchen Plates </a></h2><div class="tabs" id="j"><ul class="nav-tabs"><li class="tab active"><a href="#j-1">题解</a></li><li class="tab"><a href="#j-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="j-1"><blockquote>
+<ul>
+<li>题意：给出5个字符的大小关系，将字符从小到大依次输出。</li>
+<li>思路：数据小，直接全排列，然后判断是否有满足条件的字符对即可；数据大的话找建有向图求拓扑序。</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="j-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> f[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f[i][j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    rep(i,<span class="number">1</span>,<span class="number">5</span>)&#123;</span><br><span class="line">        a[i]=i;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">        <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'&gt;'</span>) f[s[<span class="number">2</span>]-<span class="string">'A'</span>+<span class="number">1</span>][s[<span class="number">0</span>]-<span class="string">'A'</span>+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> f[s[<span class="number">0</span>]-<span class="string">'A'</span>+<span class="number">1</span>][s[<span class="number">2</span>]-<span class="string">'A'</span>+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">        rep(i,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">            rep(j,i+<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">                <span class="keyword">if</span>(f[a[j]][a[i]]) flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            rep(i,<span class="number">1</span>,<span class="number">5</span>) <span class="built_in">printf</span>(<span class="string">"%c"</span>,a[i]<span class="number">-1</span>+<span class="string">'A'</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">while</span>(next_permutation(a+<span class="number">1</span>,a+<span class="number">6</span>));</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"impossible"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="K-Help-The-Support-Lady"><a href="#K-Help-The-Support-Lady" class="headerlink" title="K - Help The Support Lady "></a><a href="http://codeforces.com/gym/102219/problem/K" target="_blank" rel="noopener">K - Help The Support Lady </a></h2><div class="tabs" id="k"><ul class="nav-tabs"><li class="tab active"><a href="#k-1">题解</a></li><li class="tab"><a href="#k-2">Code</a></li></ul><div class="tab-content"><div class="tab-pane active" id="k-1"><blockquote>
+<ul>
+<li>题意：机器人在同一时间接到了n个任务，第i个任务耗时x[i]，只要在2*x[i]的时间内完成第i个任务，这个任务的发布者就会满意，请问最多可以使多少任务发布者满意。</li>
+<li>思路<ul>
+<li>贪心，优先完成耗时小的任务，如果前面完成的任务总时间小于当前任务的时间，则当前任务可以满足要求，否则就把当前任务舍弃掉。</li>
+<li>因为当前任务对答案的贡献为1，如果前面的任务耗时已经比当前任务的，并且要因为当前任务而舍弃前面的任务的话，对答案的贡献并不会增加，所以直接舍弃没有问题。</li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div class="tab-pane" id="k-2"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t,n;</span><br><span class="line">ll a[N],s[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    rd(t);</span><br><span class="line">    rep(_,<span class="number">1</span>,t)&#123;</span><br><span class="line">        clr(s,<span class="number">0</span>);</span><br><span class="line">        rd(n);</span><br><span class="line">        rep(i,<span class="number">1</span>,n) rd(a[i]);</span><br><span class="line">        sort(a+<span class="number">1</span>,a+<span class="number">1</span>+n);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">            s[i]=s[i<span class="number">-1</span>]+a[i];</span><br><span class="line">            <span class="keyword">if</span>(s[i<span class="number">-1</span>]&lt;=a[i]) ans++;</span><br><span class="line">            <span class="keyword">else</span> s[i]=s[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case #%d: %d\n"</span>,_,ans);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="本场总结"><a href="#本场总结" class="headerlink" title="本场总结"></a>本场总结</h2><blockquote>
+<ul>
+<li>涉及知识点：矩阵转置，小模拟，背包问题输出具体方案，状压dp，凸包，叉积，拓扑排序，贪心。</li>
+</ul>
+</blockquote>
+<h2 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h2><blockquote>
+<p>总体来说没什么大问题，签得飞起。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Bamboo_Rat 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Bamboo_Rat 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Bamboo_Rat</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://aaaaalen.github.io/杭师训练赛4总结/" title="杭师训练赛4总结">https://aaaaalen.github.io/杭师训练赛4总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/杭师训练赛3总结/" rel="next" title="杭师训练赛3总结">
+                <i class="fa fa-chevron-left"></i> 杭师训练赛3总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Bamboo_Rat" />
+            
+              <p class="site-author-name" itemprop="name">Bamboo_Rat</p>
+              <p class="site-description motion-element" itemprop="description">三旬尚远浓烟散，一如年少迟夏归</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">124</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/AAAAAlen" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:443217070@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/Jork.Dali" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_46179151" title="MyCSDN" target="_blank">MyCSDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://x-armin.com//" title="Armin" target="_blank">Armin</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://y-angora.com/" title="Angora" target="_blank">Angora</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://l-lckhy.com/" title="ConanMoke" target="_blank">ConanMoke</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#杭师训练赛第四场"><span class="nav-number">1.</span> <span class="nav-text">杭师训练赛第四场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Mental-Rotation"><span class="nav-number">1.1.</span> <span class="nav-text">A - Mental Rotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-SpongeBob-SquarePants"><span class="nav-number">1.2.</span> <span class="nav-text">B - SpongeBob SquarePants</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-I-Don’t-Want-To-Pay-For-The-Late-Jar"><span class="nav-number">1.3.</span> <span class="nav-text">C - I Don’t Want To Pay For The Late Jar!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Optimal-Slots"><span class="nav-number">1.4.</span> <span class="nav-text">E - Optimal Slots </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-Military-Class"><span class="nav-number">1.5.</span> <span class="nav-text">F - Military Class </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-Are-You-Safe"><span class="nav-number">1.6.</span> <span class="nav-text">H - Are You Safe? </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-To-Crash-Or-Not-To-Crash"><span class="nav-number">1.7.</span> <span class="nav-text">I - To Crash Or Not To Crash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J-Kitchen-Plates"><span class="nav-number">1.8.</span> <span class="nav-text">J - Kitchen Plates </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Help-The-Support-Lady"><span class="nav-number">1.9.</span> <span class="nav-text">K - Help The Support Lady </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本场总结"><span class="nav-number">1.10.</span> <span class="nav-text">本场总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人总结"><span class="nav-number">1.11.</span> <span class="nav-text">个人总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bamboo_Rat</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
