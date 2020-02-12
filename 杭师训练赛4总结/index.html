@@ -123,7 +123,7 @@
 <meta property="og:description" content="杭师训练赛第四场手速场">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://aaaaalen.github.io/image/叉积判断点在凸包内.png">
-<meta property="og:updated_time" content="2020-02-12T10:14:37.076Z">
+<meta property="og:updated_time" content="2020-02-12T12:25:01.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="杭师训练赛4总结">
 <meta name="twitter:description" content="杭师训练赛第四场手速场">
@@ -386,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2020-02-12 17:07:41 / 修改时间：18:14:37" itemprop="dateCreated datePublished" datetime="2020-02-12T17:07:41+08:00">2020-02-12</time>
+              <time title="创建时间：2020-02-12 17:07:41 / 修改时间：20:25:01" itemprop="dateCreated datePublished" datetime="2020-02-12T17:07:41+08:00">2020-02-12</time>
             
 
             
@@ -484,7 +484,8 @@
 <ul>
 <li>思路<ul>
 <li><a href="http://bamboo-rat.cn/%E5%87%B8%E5%8C%85%E9%9D%A2%E7%A7%AF/" target="_blank" rel="noopener">求凸包</a></li>
-<li>判定点是否在凸包内：P-A得到向量x，P-B得到向量y，求x和y的叉积f。依次求出凸包上相邻两点的叉积，若当前求出的叉积与上一次求出的叉积符号不同，则说明点不在凸包内。<br><img src="../image/叉积判断点在凸包内.png" alt=""></li>
+<li>判定点是否在凸包内：P-A得到向量x，P-B得到向量y，求x和y的叉积f。依次求出凸包上相邻两点的叉积，若当前求出的叉积与上一次求出的叉积正负性不同，则说明点不在凸包内。</li>
+<li>两向量：a=(x1,y1), b=(x2,y2)，他们的叉积为<code>x1*y2 - y1*x2</code><br><img src="../image/叉积判断点在凸包内.png" alt=""></li>
 </ul>
 </li>
 </ul>
