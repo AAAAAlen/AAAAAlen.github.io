@@ -116,6 +116,7 @@
 
 
   <meta name="description" content="杭师训练赛第四场手速场">
+<meta name="keywords" content="训练总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="杭师训练赛4总结">
 <meta property="og:url" content="https://aaaaalen.github.io/杭师训练赛4总结/index.html">
@@ -123,7 +124,7 @@
 <meta property="og:description" content="杭师训练赛第四场手速场">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://aaaaalen.github.io/image/叉积判断点在凸包内.png">
-<meta property="og:updated_time" content="2020-02-12T13:51:15.611Z">
+<meta property="og:updated_time" content="2020-02-12T13:58:13.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="杭师训练赛4总结">
 <meta name="twitter:description" content="杭师训练赛第四场手速场">
@@ -386,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2020-02-12 17:07:41 / 修改时间：21:51:15" itemprop="dateCreated datePublished" datetime="2020-02-12T17:07:41+08:00">2020-02-12</time>
+              <time title="创建时间：2020-02-12 17:07:41 / 修改时间：21:58:13" itemprop="dateCreated datePublished" datetime="2020-02-12T17:07:41+08:00">2020-02-12</time>
             
 
             
@@ -472,7 +473,7 @@
 <li><code>f[i][j] = ∑(f[i-1][ (j^(1&lt;&lt;k)) &gt;&gt;1]) + ∑(f[i][j] += f[i-1][( (j^(1&lt;&lt;k)) &gt;&gt;1) | (1&lt;&lt;2*e)])</code>，其中j的第k位为1。</li>
 <li>初态：f[1][j]=1，其中j的二进制位只有1个1。</li>
 <li>终态：f[n][num]，num为j的最高e+1位全1的状态。</li>
-<li>上式含义为对于第i个阶段的状态j，枚举j的第k位为1的情况A，A的答案由上一个阶段在相应位置没有1情况B转移得到，所以要先将j的第k为先置0。由于j只能包含当前状态的2<em>e+1个位置，所以上一个阶段的状态需要由j右移一位得到（可以将j描述状态的方式看作一个窗口，i到i-1相当于窗口左移，也就相当于窗口内的值右移），而最高位有0和1`( |(1&lt;&lt;2</em>e) )`两种情况，都要分别记入答案。</li>
+<li>上式含义为对于第i个阶段的状态j，枚举j的第k位为1的情况A，A的答案由上一个阶段在相应位置没有1情况B转移得到，所以要先将j的第k为先置0。由于j只能包含当前状态的<code>2*e+1</code>个位置，所以上一个阶段的状态需要由j右移一位得到（可以将j描述状态的方式看作一个窗口，i到i-1相当于窗口左移，也就相当于窗口内的值右移），而最高位有0和1<code>( |(1&lt;&lt;2*e) )</code>两种情况，都要分别记入答案。</li>
 </ul>
 </li>
 </ul>
@@ -579,6 +580,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/训练总结/" rel="tag"># 训练总结</a>
+          
+        </div>
       
 
       
